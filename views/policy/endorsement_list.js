@@ -34,7 +34,7 @@
             var get_form = new DB({
                 name: "get existings endorsements"
             });
-            get_form.DBget("policy/getRequestedEndorsements?client_no=" + SmartLife.clientno()).done(function (result) {
+            get_form.DBget("policy/getRequestedEndorsements?client_no=" + SmartLife.clientno).done(function (result) {
                 viewModel.LoadPanelShown(false);
                 if (result.success == true) {
                     viewModel.endorsement_Store(result.Endorsements);

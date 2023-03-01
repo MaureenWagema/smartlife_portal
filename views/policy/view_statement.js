@@ -217,7 +217,7 @@
 
             viewModel.LoadPanelShown(true);
             var type = "client/getClientPolicies?";
-            getPolicy(type, SmartLife.clientno()).done(function (result) {
+            getPolicy(type, SmartLife.clientno).done(function (result) {
                 viewModel.LoadPanelShown(false);
                 if (result.success == true) {
                     console.log(result.ClientPolicies);

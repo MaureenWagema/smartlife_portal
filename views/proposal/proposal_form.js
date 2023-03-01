@@ -2262,10 +2262,10 @@
                        // type: "default",
                         onClick: function (args) {
                             var result = args.validationGroup.validate();
-                            if (result.isValid) {
+                            //if (result.isValid) {
                                 //save and navigate next screen.
                                 navnextPrev(1);
-                            }
+                           // }
                         }
                     }
                 }
@@ -2503,7 +2503,7 @@
                     ]
                 }
             }, {
-                colSpan: 2,
+                colSpan: 4,
                 itemType: "empty"
             }, {
                 label: {
@@ -2685,7 +2685,7 @@
                 dataField: "attachements",
                 editorType: "dxDataGrid",
                 editorOptions: {
-                    dataSource: [{ id: 1, name: "SIGNATURE" }, { id: 2, name: "IDENTIFICATION CARD" }],
+                    dataSource: [{ id: 1, name: "ID FRONT" }, { id: 2, name: "ID BACK" }, { id: 3, name: "MEDICAL RPT" }],
                     wordWrapEnabled: true,
                     columns: [
                         {

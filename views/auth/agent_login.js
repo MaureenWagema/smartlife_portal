@@ -70,7 +70,7 @@
                     editorOptions: {
                         readOnly: false,
                         mode: 'password',
-                        value: 'MRtaUh'
+                        value: 'admin'
                     },
                     validationRules: [{
                         type: "required",

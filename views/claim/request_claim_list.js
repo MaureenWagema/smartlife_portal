@@ -56,7 +56,7 @@
             var get_form = new DB({
                 name: "get existings checklists"
             });
-            get_form.DBget("claims/getClientClaims?client_no=" + SmartLife.clientno()).done(function (result) {
+            get_form.DBget("claims/getClientClaims?client_no=" + SmartLife.clientno).done(function (result) {
                 viewModel.LoadPanelShown(false);
                 if (result.success == true) {
                     viewModel.claim_Store(result.Claims);
