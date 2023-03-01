@@ -130,7 +130,7 @@
                     });
                     save_roles.save_login(function (status){
                         if (status) {
-                            SmartLife.app.navigate('home', { root: true });
+                            SmartLife.app.navigate('user_home', { root: true });
                         }
                     });
                 } else {

@@ -1,4 +1,4 @@
-<div data-options="dxView : { name: 'home', title: 'home' } " >
+<div data-options="dxView : { name: 'home', title: '', disableCache: true } " >
     <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
 
         <!--<div style="padding:2px" id="dxForm" data-bind="dxForm: dxFormOptions"></div>-->
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="col-lg-6 col-xl-3 mb-4">
+            <div class="col-lg-6 col-xl-3 mb-4">
             <div class="card bg-success text-white h-100">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -85,19 +85,18 @@
                     <span class="text-white stretched-link small">Claim applications in the pipeline</span>
                 </div>
             </div>
-        </div>-->
+        </div>
         </div>
 
 
-        <div align="center" style="width:100%;height:100%">
+        <!--<div align="center" style="width:100%;height:100%">
             <div style="width:100%;height:50%;">
                 <div id="chart" data-bind="dxChart: chartOptions"></div>
             </div>
             <div style="width:100%;height:50%;" align="center">
                 <div id="pie" data-bind="dxPieChart: piechartOptions"></div>
-                <!--<div id="polar_chart" data-bind="dxBarGauge: barGaugeOptions"></div>-->
             </div>
-        </div>
+        </div>-->
 
 
     </div>

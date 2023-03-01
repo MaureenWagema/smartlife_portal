@@ -1,4 +1,4 @@
-<div data-options="dxView : { name: 'applications', title: '' } " >
+<div data-options="dxView : { name: 'applications', title: '', disableCache: true } " >
     <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
         <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
         <div>

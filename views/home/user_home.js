@@ -1,4 +1,4 @@
-﻿SmartLife.agent_login = function (params) {
+﻿SmartLife.user_home = function (params) {
     "use strict";
     var formLoginInstance;
 
@@ -54,7 +54,7 @@
                     dataField: "agent_no",
                     editorOptions: {
                         readOnly: false,
-                        value:'CA066'
+                        value: 'CA066'
                     },
                     validationRules: [{
                         type: "required",
@@ -63,7 +63,7 @@
                 }, {
                     label: {
                         text: "Password",
-                        
+
                     },
                     editorType: "dxTextBox",
                     dataField: "password",
