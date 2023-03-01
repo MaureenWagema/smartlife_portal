@@ -1,0 +1,1510 @@
+{
+	"info": {
+		"_postman_id": "639b6351-c273-412e-9bfa-4fff61b73625",
+		"name": "GLICO-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5287539"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "9743a477-41c3-47fa-bbe2-d1ab87f83bcb",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "F0gSDutq24oDxPi90y0cLoYbgZUj8qTeXSIFtj0Q",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/tokenRequest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"tokenRequest"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "9275f1fa-11de-4482-a8fd-fd5e0c4579d2",
+							"disabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "pIMsFbwmFjWwYZF4MGZqlBBRDBlqPycGiazl6El6",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calc-esb",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/calc/ESB?total_premium=100&PlanCode=02&anb=59&term=10&gender=M&class_code=001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"calc",
+						"ESB"
+					],
+					"query": [
+						{
+							"key": "total_premium",
+							"value": "100"
+						},
+						{
+							"key": "PlanCode",
+							"value": "02"
+						},
+						{
+							"key": "anb",
+							"value": "59"
+						},
+						{
+							"key": "term",
+							"value": "10"
+						},
+						{
+							"key": "gender",
+							"value": "M"
+						},
+						{
+							"key": "class_code",
+							"value": "001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProposal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/policy/getProposal?record_id=57",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"policy",
+						"getProposal"
+					],
+					"query": [
+						{
+							"key": "record_id",
+							"value": "57"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calc-life-anidaso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/calc/LifeAnidaso?sum_assured=200000&plan_code=14&anb=40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"calc",
+						"LifeAnidaso"
+					],
+					"query": [
+						{
+							"key": "sum_assured",
+							"value": "200000"
+						},
+						{
+							"key": "plan_code",
+							"value": "14"
+						},
+						{
+							"key": "anb",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calc-dp-anidaso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/calc/DepAnidaso?sum_assured=2000&plan_code=14&anb=31&relationship_code=D",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"calc",
+						"DepAnidaso"
+					],
+					"query": [
+						{
+							"key": "sum_assured",
+							"value": "2000"
+						},
+						{
+							"key": "plan_code",
+							"value": "14"
+						},
+						{
+							"key": "anb",
+							"value": "31"
+						},
+						{
+							"key": "relationship_code",
+							"value": "D"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IdealFuneralPlan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVkMDNmOWZmZTY2MzM0ODI5ZWQ4NTk2Y2E4ZTc2MGI4ZDg3MjkwYWU1MTNkZjYzYjQzZWI0YmE5MTExZDRjOGVkYThlMWI1YmRlYTgyYzJlIn0.eyJhdWQiOiIyIiwianRpIjoiZWQwM2Y5ZmZlNjYzMzQ4MjllZDg1OTZjYThlNzYwYjhkODcyOTBhZTUxM2RmNjNiNDNlYjRiYTkxMTFkNGM4ZWRhOGUxYjViZGVhODJjMmUiLCJpYXQiOjE2MzM0NDM4MzksIm5iZiI6MTYzMzQ0MzgzOSwiZXhwIjoxNjMzNDQ3NDM5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.W2KG3tgyvKllZ1saRknKebwUq45qzCObut-fMpoPKzFuDNEdJ-P7O0Ii48wpORBmMgHBto_aA1FYxLAEgIL_X0EG5VDYxrFPo5pBlX62fcp0FfloTAnTG8_V2QIY3iUqc4p3DBTzdaXKeKlw6TomcQZm__VGC_P2Imdq1JGii5pIwwYdTpXlW_FLDGKQk5JHLIFtKQM3V_G5UpyO8VYoSLXJgtjr8Ono6u_RPqUUSmGRKjS1cMIsuAgNylUnQBfheAF3RvMde-0wp7Nm9xdCsvsJhwyQzPDWYeC_IeTUoitMIDmxw4qF2HQoOWIQcKVDwsOulgdAcLDmfu-k-czcJZNGF6TdspulO7rtejGgwAMZ-LGlZSgEVTuc4OBxzcgWolBh_wGbcqretvY8u-vIjuWfwlqrAF_4ZdvNBpYFT6uXigXN0-lD0i2h5vtZ4TbVueAe6CFfmhcF-eGBjuifQG1guFpR7g29Tdyrpz23o17OLoz2vEoHJKJbGuI-fWbpPZ3CWK3hnsKJsH89SMm196aXIDPWv45D3LcV-81J9Cp2_ItMVMyz4fEmaZ9rGzgrOgkGrfn7WgWgeCppgWwcf_O_rCLh8IvorvE_ZIiGjumkiiFECP50vFdnbqNdee7IExY7Sen0ZimN_uUV16HBeidY3DNae6BZDF3pcjsvWR0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "plan_code",
+							"value": "28",
+							"type": "text"
+						},
+						{
+							"key": "sum_assured",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "anb",
+							"value": "34",
+							"type": "text"
+						},
+						{
+							"key": "term",
+							"value": "66",
+							"type": "text"
+						},
+						{
+							"key": "paymode",
+							"value": "M",
+							"description": "refer to referrential data",
+							"type": "text"
+						},
+						{
+							"key": "relationship_code",
+							"value": "A",
+							"description": "refer to referrential data",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/calc/IdealFuneralPlan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"calc",
+						"IdealFuneralPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PremiumFuneralPlan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVkMDNmOWZmZTY2MzM0ODI5ZWQ4NTk2Y2E4ZTc2MGI4ZDg3MjkwYWU1MTNkZjYzYjQzZWI0YmE5MTExZDRjOGVkYThlMWI1YmRlYTgyYzJlIn0.eyJhdWQiOiIyIiwianRpIjoiZWQwM2Y5ZmZlNjYzMzQ4MjllZDg1OTZjYThlNzYwYjhkODcyOTBhZTUxM2RmNjNiNDNlYjRiYTkxMTFkNGM4ZWRhOGUxYjViZGVhODJjMmUiLCJpYXQiOjE2MzM0NDM4MzksIm5iZiI6MTYzMzQ0MzgzOSwiZXhwIjoxNjMzNDQ3NDM5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.W2KG3tgyvKllZ1saRknKebwUq45qzCObut-fMpoPKzFuDNEdJ-P7O0Ii48wpORBmMgHBto_aA1FYxLAEgIL_X0EG5VDYxrFPo5pBlX62fcp0FfloTAnTG8_V2QIY3iUqc4p3DBTzdaXKeKlw6TomcQZm__VGC_P2Imdq1JGii5pIwwYdTpXlW_FLDGKQk5JHLIFtKQM3V_G5UpyO8VYoSLXJgtjr8Ono6u_RPqUUSmGRKjS1cMIsuAgNylUnQBfheAF3RvMde-0wp7Nm9xdCsvsJhwyQzPDWYeC_IeTUoitMIDmxw4qF2HQoOWIQcKVDwsOulgdAcLDmfu-k-czcJZNGF6TdspulO7rtejGgwAMZ-LGlZSgEVTuc4OBxzcgWolBh_wGbcqretvY8u-vIjuWfwlqrAF_4ZdvNBpYFT6uXigXN0-lD0i2h5vtZ4TbVueAe6CFfmhcF-eGBjuifQG1guFpR7g29Tdyrpz23o17OLoz2vEoHJKJbGuI-fWbpPZ3CWK3hnsKJsH89SMm196aXIDPWv45D3LcV-81J9Cp2_ItMVMyz4fEmaZ9rGzgrOgkGrfn7WgWgeCppgWwcf_O_rCLh8IvorvE_ZIiGjumkiiFECP50vFdnbqNdee7IExY7Sen0ZimN_uUV16HBeidY3DNae6BZDF3pcjsvWR0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "plan_code",
+							"value": "29",
+							"type": "text"
+						},
+						{
+							"key": "sum_assured",
+							"value": "100000",
+							"type": "text"
+						},
+						{
+							"key": "anb",
+							"value": "34",
+							"type": "text"
+						},
+						{
+							"key": "term",
+							"value": "66",
+							"type": "text"
+						},
+						{
+							"key": "paymode",
+							"value": "M",
+							"description": "refer to referrential data",
+							"type": "text"
+						},
+						{
+							"key": "relationship_code",
+							"value": "A",
+							"description": "refer to referrential data",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/calc/PremiumFuneralPlan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"calc",
+						"PremiumFuneralPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lifeSavingsPlan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImYzZTgzMGIyNjNjNWNiNDgxZWU4NmQ1YTM4YmFkMTQ4ZmZjZWU3ZTE2NGVkOTk0MTYxNjk3MmQ0Y2I3YTRkMTE4YzY3ZjZjNGZlMzFkNmI3In0.eyJhdWQiOiIyIiwianRpIjoiZjNlODMwYjI2M2M1Y2I0ODFlZTg2ZDVhMzhiYWQxNDhmZmNlZTdlMTY0ZWQ5OTQxNjE2OTcyZDRjYjdhNGQxMThjNjdmNmM0ZmUzMWQ2YjciLCJpYXQiOjE2MzM1MTkzNTgsIm5iZiI6MTYzMzUxOTM1OCwiZXhwIjoxNjMzNTIyOTU3LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.oL0c96fQ74gETvDAocYU_X68MKM1um5j80Vih05uNzFFg_ljwUM6r6uehw6f02tJpIjrzVOiSng3cjqcqlYIaJCsSz2P663hPS35ky2eyc7owjT-4_ltlUB_MIf4E0gXsI4A44F7JEJ-zgbWDw0fuQUgbvxmiPskmVz3n4iMi2AXqVLak82I9FCsT7CTRzjwatcMw1lc7KsqKIXlx3UeB_64ayswIhQKzM5kkml2LEas8hrDXAkQw2leYVI8XstKA2OBz05J3bKB1qs3US3v6AxNOhY-AkPK9D1Vh0YCjVL0yIZeXhLNRELsfhzk1xokOWjM91PV-K6tvdZ-fq8Ky4ox1C0fsWriQzvOyemiTYRc4GtWNrh8AWh9I0okQseQRwwFLKvQ5ytRMpC-O-fYi6G1Tv9fPly6db8zK55SUhOGYmbVkrSPPcWzLrPmdpfouuu1Mrqu2AHZhHKFWPOTWCKZ4mBuYajaO1ih6LjKLCryemwPVvJpleEswLlJM_uu-FNYYVZz3qjQDag_39imv5CsDyCnEQiW7Zy7aAVnz7MnqdLsEAqCqN_dIMuBrqWuMAOdx2DWajJIA6jaTT6rvJRDs6q77oX885iFRyj928K1LyG7I5F-ICKlV1gUjdeY8tYur5m9oVNfEw_sJh-5VfPKc_4UHrla2-OkuHqtN4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "plan_code",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "sum_assured",
+							"value": "100000",
+							"type": "text"
+						},
+						{
+							"key": "anb",
+							"value": "31",
+							"description": "age next birthday",
+							"type": "text"
+						},
+						{
+							"key": "term",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "paymode",
+							"value": "M",
+							"description": "refer to referrential data",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/calc/lifeSavingsPlan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"calc",
+						"lifeSavingsPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GEEP",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "plan_code",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "monthly_premium",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "anb",
+							"value": "31",
+							"type": "text"
+						},
+						{
+							"key": "term",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "paymode",
+							"value": "M",
+							"description": "refer to referrential data",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/calc/GEEP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"calc",
+						"GEEP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/auth/getTest?name=Kevinski&desc=Nigha&table_name=testing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"auth",
+						"getTest"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Kevinski"
+						},
+						{
+							"key": "desc",
+							"value": "Nigha"
+						},
+						{
+							"key": "table_name",
+							"value": "testing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Common-Params",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/params/getParams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"params",
+						"getParams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SMS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://193.105.74.59/api/sendsms/plain?user=Glico2018&password=glicosmpp&sender=GLICO&SMSText=We are your friends&GSM=233204194298",
+					"protocol": "http",
+					"host": [
+						"193",
+						"105",
+						"74",
+						"59"
+					],
+					"path": [
+						"api",
+						"sendsms",
+						"plain"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "Glico2018"
+						},
+						{
+							"key": "password",
+							"value": "glicosmpp"
+						},
+						{
+							"key": "sender",
+							"value": "GLICO"
+						},
+						{
+							"key": "SMSText",
+							"value": "We are your friends"
+						},
+						{
+							"key": "GSM",
+							"value": "233204194298"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendOTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "agent_no",
+							"value": "DTB0005",
+							"type": "text"
+						},
+						{
+							"key": "policy_no",
+							"value": "14-2022-05162",
+							"type": "text"
+						},
+						{
+							"key": "client_no",
+							"value": "B661129",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/collections/sendOTP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"collections",
+						"sendOTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "receiveOTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "payment_date",
+							"value": "2022-11-01 00:00:00.000",
+							"type": "text"
+						},
+						{
+							"key": "agent_no",
+							"value": "DTB0005",
+							"type": "text"
+						},
+						{
+							"key": "policy_no",
+							"value": "14-2022-05162",
+							"type": "text"
+						},
+						{
+							"key": "client_no",
+							"value": "B661129",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "otp",
+							"value": "6542",
+							"type": "text"
+						},
+						{
+							"key": "market_code",
+							"value": "157",
+							"type": "text"
+						},
+						{
+							"key": "payment_type",
+							"value": "1",
+							"description": "6 is momo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/collections/receiveOTP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"collections",
+						"receiveOTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateHubtel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ResponseCode\": \"0000\",\r\n    \"Message\": \"Success\",\r\n    \"Data\": {\r\n        \"OrderId\": \"1d0e06bc689c4de2bb87a54829a89640\",\r\n        \"Description\": \"Premium Payment\",\r\n        \"RecurringInvoiceId\": \"8ae267e31af748d4934b0420be6f47f0\",\r\n        \"TransactionId\": \"5814152092296267804084\",\r\n        \"ClientReference\": \"14-2022-05175\",\r\n        \"ExternalTransactionId\": \"5814152092296267804084\",\r\n        \"OrderDate\": \"2022-02-10 09:58:00\",\r\n        \"InvoiceEndDate\": \"2021-10-14 12:00:00\",\r\n        \"CustomerMobileNumber\": \"233204194298\",\r\n        \"Charges\": 0.01,\r\n        \"AmountAfterCharges\": 0.19,\r\n        \"AmountCharged\": 0.20,\r\n        \"Amount\": 0.20,\r\n        \"InitialAmount\": 0.20,\r\n        \"RecurringAmount\": 0.10\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://149.102.141.123:90/glico_api/public/collections/updateHubtel",
+					"protocol": "http",
+					"host": [
+						"149",
+						"102",
+						"141",
+						"123"
+					],
+					"port": "90",
+					"path": [
+						"glico_api",
+						"public",
+						"collections",
+						"updateHubtel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "agent_no",
+							"value": "DTB0005",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/collections/Remit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"collections",
+						"Remit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRemit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "agent_no",
+							"value": "DTB0005",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/collections/updateRemit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"collections",
+						"updateRemit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClientPolicies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://149.102.141.123:90/glico_api/public/client/getClientPolicies?mobile_no=0275132031",
+					"protocol": "http",
+					"host": [
+						"149",
+						"102",
+						"141",
+						"123"
+					],
+					"port": "90",
+					"path": [
+						"glico_api",
+						"public",
+						"client",
+						"getClientPolicies"
+					],
+					"query": [
+						{
+							"key": "client_no",
+							"value": "C00300142",
+							"disabled": true
+						},
+						{
+							"key": "mobile_no",
+							"value": "0275132031"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClientInvestment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/client/getClientInvestment?policy_no=2010-00124",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"client",
+						"getClientInvestment"
+					],
+					"query": [
+						{
+							"key": "policy_no",
+							"value": "2010-00124"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClientPremiums",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/client/getClientPremiums?policy_no=2010-00124",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"client",
+						"getClientPremiums"
+					],
+					"query": [
+						{
+							"key": "policy_no",
+							"value": "2010-00124"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertClaimEntries",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "mobile_id",
+							"value": "DTB0005",
+							"type": "text"
+						},
+						{
+							"key": "HasBeenPicked",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "created_on",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "RequestDate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "statuscode",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "claim_type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "PolicyId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "PartialWithdPurpose",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "CurrentCashValue",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "PreviousloanAmount",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "AmountAppliedFor",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/claims/insertClaimEntries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"claims",
+						"insertClaimEntries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClientClaims",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://149.102.141.123:90/glico_api/public/claims/getClientClaims?mobile_no=0275132031",
+					"protocol": "http",
+					"host": [
+						"149",
+						"102",
+						"141",
+						"123"
+					],
+					"port": "90",
+					"path": [
+						"glico_api",
+						"public",
+						"claims",
+						"getClientClaims"
+					],
+					"query": [
+						{
+							"key": "mobile_no",
+							"value": "0275132031"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClaimAttachments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/claims/getClaimAttachments?claim_type=PWD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"claims",
+						"getClaimAttachments"
+					],
+					"query": [
+						{
+							"key": "claim_type",
+							"value": "PWD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveQuote",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVkMDNmOWZmZTY2MzM0ODI5ZWQ4NTk2Y2E4ZTc2MGI4ZDg3MjkwYWU1MTNkZjYzYjQzZWI0YmE5MTExZDRjOGVkYThlMWI1YmRlYTgyYzJlIn0.eyJhdWQiOiIyIiwianRpIjoiZWQwM2Y5ZmZlNjYzMzQ4MjllZDg1OTZjYThlNzYwYjhkODcyOTBhZTUxM2RmNjNiNDNlYjRiYTkxMTFkNGM4ZWRhOGUxYjViZGVhODJjMmUiLCJpYXQiOjE2MzM0NDM4MzksIm5iZiI6MTYzMzQ0MzgzOSwiZXhwIjoxNjMzNDQ3NDM5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.W2KG3tgyvKllZ1saRknKebwUq45qzCObut-fMpoPKzFuDNEdJ-P7O0Ii48wpORBmMgHBto_aA1FYxLAEgIL_X0EG5VDYxrFPo5pBlX62fcp0FfloTAnTG8_V2QIY3iUqc4p3DBTzdaXKeKlw6TomcQZm__VGC_P2Imdq1JGii5pIwwYdTpXlW_FLDGKQk5JHLIFtKQM3V_G5UpyO8VYoSLXJgtjr8Ono6u_RPqUUSmGRKjS1cMIsuAgNylUnQBfheAF3RvMde-0wp7Nm9xdCsvsJhwyQzPDWYeC_IeTUoitMIDmxw4qF2HQoOWIQcKVDwsOulgdAcLDmfu-k-czcJZNGF6TdspulO7rtejGgwAMZ-LGlZSgEVTuc4OBxzcgWolBh_wGbcqretvY8u-vIjuWfwlqrAF_4ZdvNBpYFT6uXigXN0-lD0i2h5vtZ4TbVueAe6CFfmhcF-eGBjuifQG1guFpR7g29Tdyrpz23o17OLoz2vEoHJKJbGuI-fWbpPZ3CWK3hnsKJsH89SMm196aXIDPWv45D3LcV-81J9Cp2_ItMVMyz4fEmaZ9rGzgrOgkGrfn7WgWgeCppgWwcf_O_rCLh8IvorvE_ZIiGjumkiiFECP50vFdnbqNdee7IExY7Sen0ZimN_uUV16HBeidY3DNae6BZDF3pcjsvWR0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dob",
+							"value": " 1988-01-01",
+							"type": "text"
+						},
+						{
+							"key": "anb",
+							"value": " 34",
+							"type": "text"
+						},
+						{
+							"key": "plan_code",
+							"value": " 37",
+							"type": "text"
+						},
+						{
+							"key": "term",
+							"value": " 65",
+							"type": "text"
+						},
+						{
+							"key": "sum_assured",
+							"value": " 100000",
+							"description": "refer to referrential data",
+							"type": "text"
+						},
+						{
+							"key": "pol_fee",
+							"value": " 1",
+							"description": "refer to referrential data",
+							"type": "text"
+						},
+						{
+							"key": "basic_premium",
+							"value": " 313",
+							"type": "text"
+						},
+						{
+							"key": "modal_premium",
+							"value": " 314",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/quotation/saveQuote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"quotation",
+						"saveQuote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClientDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://149.102.141.123:90/glico_api/public/client/getClientDetails?client_no=C00300142",
+					"protocol": "http",
+					"host": [
+						"149",
+						"102",
+						"141",
+						"123"
+					],
+					"port": "90",
+					"path": [
+						"glico_api",
+						"public",
+						"client",
+						"getClientDetails"
+					],
+					"query": [
+						{
+							"key": "client_no",
+							"value": "C00300142"
+						},
+						{
+							"key": "mobile_no",
+							"value": "0275132031",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://149.102.141.123:90/frist_merit_api/public/fmt/sendEmail?name=Kevin Gachomo&email_to=kevin.softclans1@mailinator.com&email_content=testing&email_subject=Testing",
+					"protocol": "http",
+					"host": [
+						"149",
+						"102",
+						"141",
+						"123"
+					],
+					"port": "90",
+					"path": [
+						"frist_merit_api",
+						"public",
+						"fmt",
+						"sendEmail"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Kevin Gachomo"
+						},
+						{
+							"key": "email_to",
+							"value": "kevin.softclans1@mailinator.com"
+						},
+						{
+							"key": "email_content",
+							"value": "testing"
+						},
+						{
+							"key": "email_subject",
+							"value": "Testing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prompt Pay",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://197.159.142.163:90/hubtel/hubtel.php?mobile_no=233204194298&modal_prem=10&paymentinterval=DAILY&customerName=Kevin Wachira&email=kgachomo@gmail.com&policyNo=14-2020-0001",
+					"protocol": "http",
+					"host": [
+						"197",
+						"159",
+						"142",
+						"163"
+					],
+					"port": "90",
+					"path": [
+						"hubtel",
+						"hubtel.php"
+					],
+					"query": [
+						{
+							"key": "mobile_no",
+							"value": "233204194298"
+						},
+						{
+							"key": "modal_prem",
+							"value": "10"
+						},
+						{
+							"key": "paymentinterval",
+							"value": "DAILY",
+							"description": "MONTHLY"
+						},
+						{
+							"key": "customerName",
+							"value": "Kevin Wachira"
+						},
+						{
+							"key": "email",
+							"value": "kgachomo@gmail.com"
+						},
+						{
+							"key": "policyNo",
+							"value": "14-2020-0001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USSD SMS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://149.102.141.123:90/glico_api/public/sms/SMS?msg=We are your friends&mobile_no=233204194298",
+					"protocol": "http",
+					"host": [
+						"149",
+						"102",
+						"141",
+						"123"
+					],
+					"port": "90",
+					"path": [
+						"glico_api",
+						"public",
+						"sms",
+						"SMS"
+					],
+					"query": [
+						{
+							"key": "msg",
+							"value": "We are your friends"
+						},
+						{
+							"key": "mobile_no",
+							"value": "233204194298"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GHANA CARD VERIFICATION",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.5:90/hubtel/hubtel_verification.php?Id_type=ghanacard&Id_number=GHA-722078975-1&n=2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"5"
+					],
+					"port": "90",
+					"path": [
+						"hubtel",
+						"hubtel_verification.php"
+					],
+					"query": [
+						{
+							"key": "Id_type",
+							"value": "ghanacard"
+						},
+						{
+							"key": "Id_number",
+							"value": "GHA-722078975-1"
+						},
+						{
+							"key": "n",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOMO NO verification",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.5:90/hubtel/hubtel_verification.php?Channel=mtn-gh&CustomerMsisdn=233545412010&n=1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"5"
+					],
+					"port": "90",
+					"path": [
+						"hubtel",
+						"hubtel_verification.php"
+					],
+					"query": [
+						{
+							"key": "Channel",
+							"value": "mtn-gh"
+						},
+						{
+							"key": "CustomerMsisdn",
+							"value": "233545412010"
+						},
+						{
+							"key": "n",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPolicyDependants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/policy/getPolicyDependants?policy_no=2010-00124&policyId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"policy",
+						"getPolicyDependants"
+					],
+					"query": [
+						{
+							"key": "policy_no",
+							"value": "2010-00124"
+						},
+						{
+							"key": "policyId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPolicyBeneficiaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/policy/getPolicyBeneficiaries?policy_no=2010-00124&policyId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"policy",
+						"getPolicyBeneficiaries"
+					],
+					"query": [
+						{
+							"key": "policy_no",
+							"value": "2010-00124"
+						},
+						{
+							"key": "policyId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPolicyDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/policy/getPolicyDetails?policy_no=2010-00124&policyId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"policy",
+						"getPolicyDetails"
+					],
+					"query": [
+						{
+							"key": "policy_no",
+							"value": "2010-00124"
+						},
+						{
+							"key": "policyId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequestedEndorsements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/policy/getRequestedEndorsements?policy_no=2010-00124&policyId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"policy",
+						"getRequestedEndorsements"
+					],
+					"query": [
+						{
+							"key": "policy_no",
+							"value": "2010-00124"
+						},
+						{
+							"key": "policyId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "syncImage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:97/glico_api/public/sync/syncImage?image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "97",
+					"path": [
+						"glico_api",
+						"public",
+						"sync",
+						"syncImage"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
