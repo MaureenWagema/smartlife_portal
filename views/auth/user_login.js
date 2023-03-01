@@ -130,7 +130,7 @@
                     });
                     save_roles.save_login(function (status){
                         if (status) {
-                            SmartLife.app.navigate('user_home', { root: true });
+                            SmartLife.app.navigate('policy_enquiry', { root: true });
                         }
                     });
                 } else {

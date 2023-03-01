@@ -39,6 +39,7 @@
         SmartLife.config.navigation[8].visible(false);
         SmartLife.config.navigation[9].visible(false);
         SmartLife.config.navigation[10].visible(false);
+        SmartLife.config.navigation[11].visible(false);
     }
 
     //return the access roles
@@ -48,27 +49,28 @@
         //client
         if (SmartLife.login_type == 1) {
             SmartLife.config.navigation[0].visible(true);
-            SmartLife.config.navigation[1].visible(true);
-            SmartLife.config.navigation[2].visible(true);
-            SmartLife.config.navigation[5].visible(true);
-            SmartLife.config.navigation[8].visible(true);
-            SmartLife.config.navigation[9].visible(true);
-        }
-        //agent
-        else if (SmartLife.login_type == 2) {
-            SmartLife.config.navigation[0].visible(true);
-            SmartLife.config.navigation[1].visible(true);
-            SmartLife.config.navigation[3].visible(true);
-            SmartLife.config.navigation[10].visible(true);
-        }
-        //pos
-        else if (SmartLife.login_type == 3) {
-            SmartLife.config.navigation[0].visible(true);
-            SmartLife.config.navigation[1].visible(true);
             SmartLife.config.navigation[3].visible(true);
             SmartLife.config.navigation[4].visible(true);
             SmartLife.config.navigation[6].visible(true);
-            SmartLife.config.navigation[8].visible(true);
+            SmartLife.config.navigation[9].visible(true);
+            SmartLife.config.navigation[10].visible(true);
+        }
+        //agent
+        else if (SmartLife.login_type == 2) {
+            SmartLife.config.navigation[1].visible(true);
+            SmartLife.config.navigation[3].visible(true);
+            SmartLife.config.navigation[5].visible(true);
+            SmartLife.config.navigation[11].visible(true);
+        }
+        //pos
+        else if (SmartLife.login_type == 3) {
+            SmartLife.config.navigation[2].visible(true);
+            SmartLife.config.navigation[3].visible(true);
+            SmartLife.config.navigation[4].visible(true);
+            SmartLife.config.navigation[5].visible(true);
+            SmartLife.config.navigation[7].visible(true);
+            SmartLife.config.navigation[9].visible(true);
+            SmartLife.config.navigation[10].visible(true);
         }
         fn(true);
     }
