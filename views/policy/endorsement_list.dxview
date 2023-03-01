@@ -1,0 +1,27 @@
+<div data-options="dxView : { name: 'endorsement_list', title: 'endorsement_list' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div align="left" style="width:100%;padding:10px;">
+            <div data-bind="dxButton: { text: 'REQUEST NEW ENDORSEMENT', icon: 'plus', onClick: add_endorsement, type: 'default' }"></div>
+        </div>
+        <div align="center" class="dx-fieldset-header">Applied Endorsements</div>
+        <div id="gridContainer" data-bind="dxDataGrid: { dataSource: endorsement_Store,wordWrapEnabled: true,showColumnHeaders:true, columns: endorsement_columns ,  height: '100%', width: '100%', scrolling:{mode:'standard'}, paging: {enabled: false}, searchPanel: { visible: false, width: 350 }}">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

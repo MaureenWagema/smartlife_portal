@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="dx-theme" data-theme="android5.light" href="css/dx.android5.light.css" data-active="false" />
+    <link rel="stylesheet" type="text/css" href="css/dx.spa.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="css/dx.light.css" data-active="true" />
+    <link rel="dx-theme" data-theme="light.compact" href="css/dx.light.compact.css" data-active="true" />
+    <link rel="dx-theme" data-theme="contrast" href="css/dx.contrast.css" data-active="true" />
+    <link rel="dx-theme" data-theme="contrast.compact" href="css/dx.contrast.compact.css" data-active="true" />
+    <link rel="dx-theme" data-theme="dark.compact" href="css/dx.dark.compact.css" data-active="true" />
+
+    <title>SmartLife</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <!--Custom css-->
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="css/static/img/icons/icon-48x48.png" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/static/css/app.css" />-->
+    <!--<script type="text/javascript" src="css/src/js/app.js"></script>
+    <script type="text/javascript" src="css/src/js/modules/bootstrap.js"></script>
+    <script type="text/javascript" src="css/src/js/modules/sidebar.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/materialdesignicons.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/materialdesignicons.min.css" />
+
+    <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+    <!--
+        Other available themes:
+        <link rel="stylesheet" href="css/dx.dark.css" />
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/knockout-latest.js"></script>
+
+
+
+    <!-- Read the Localization section of the migration guide for more details http://dxpr.es/1TXqrVS -->
+    <!--
+    <script type="text/javascript" src="js/cldr.min.js"></script>
+    <script type="text/javascript" src="js/cldr/event.min.js"></script>
+    <script type="text/javascript" src="js/cldr/supplemental.min.js"></script>
+
+    <script type="text/javascript" src="js/globalize.min.js"></script>
+    <script type="text/javascript" src="js/globalize/message.min.js"></script>
+    <script type="text/javascript" src="js/globalize/number.min.js"></script>
+    <script type="text/javascript" src="js/globalize/date.min.js"></script>
+    <script type="text/javascript" src="js/globalize/currency.min.js"></script>
+    -->
+
+    <script type="text/javascript" src="js/dx.all.js"></script>
+    <!--
+    <script type="text/javascript" src="js/dx.all.debug.js"></script>
+    -->
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script type="text/javascript" src="smartlife.shared.config.js"></script>
+    <script type="text/javascript" src="smartlife.config.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="data/db.js"></script>
+    <!-- Layouts -->
+    <link rel="stylesheet" type="text/css" href="layouts/Desktop/DesktopLayout.css" />
+    <link rel="dx-template" type="text/html" href="layouts/Desktop/DesktopLayout.html" />
+    <script type="text/javascript" src="layouts/Desktop/DesktopLayout.js"></script>
+    <link rel="stylesheet" type="text/css" href="layouts/Custom/Custom.css" />
+    <link rel="dx-template" type="text/html" href="layouts/Custom/Custom.html" />
+    <script type="text/javascript" src="layouts/Custom/Custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="layouts/Empty/EmptyLayout.css" />
+    <link rel="dx-template" type="text/html" href="layouts/Empty/EmptyLayout.html" />
+    <script type="text/javascript" src="layouts/Empty/EmptyLayout.js"></script>
+    <link rel="stylesheet" type="text/css" href="layouts/Treeview/TreeviewLayout.css" />
+    <link rel="dx-template" type="text/html" href="layouts/Treeview/TreeviewLayout.html" />
+    <script type="text/javascript" src="layouts/Treeview/TreeviewLayout.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="views/custom css/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="views/custom css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css" />-->
+    <link href="css/custom.min.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" type="text/css" href="views/custom css/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="views/custom css/home.css" />
+    <link rel="stylesheet" type="text/css" href="views/custom css/dashstyle.css" />-->
+    <!-- Views -->
+    <link rel="dx-template" type="text/html" href="views/about.html" />
+    <link rel="dx-template" type="text/html" href="views/blank.html" />
+    <link rel="dx-template" type="text/html" href="views/auth/login.dxview" />
+    <link rel="dx-template" type="text/html" href="views/auth/user_login.dxview" />
+    <link rel="dx-template" type="text/html" href="views/auth/agent_login.dxview" />
+    <link rel="dx-template" type="text/html" href="views/auth/register.dxview" />
+    <link rel="dx-template" type="text/html" href="views/home/home.dxview" />
+    <link rel="dx-template" type="text/html" href="views/home/applications.dxview" />
+    <link rel="dx-template" type="text/html" href="views/home/Layout.dxview" />
+    <link rel="dx-template" type="text/html" href="views/home/main_dashboard.dxview" />
+    <link rel="dx-template" type="text/html" href="views/proposal/proposal_form.dxview" />
+    <link rel="dx-template" type="text/html" href="views/proposal/products_list.dxview" />
+    <link rel="dx-template" type="text/html" href="views/quotation/get_quotation.dxview" />
+    <link rel="dx-template" type="text/html" href="views/quotation/policy_det.dxview" />
+    <link rel="dx-template" type="text/html" href="views/quotation/caputre_quotation.dxview" />
+    <link rel="dx-template" type="text/html" href="views/policy/make_a_payment.dxview" />
+    <link rel="dx-template" type="text/html" href="views/policy/view_statement.dxview" />
+    <link rel="dx-template" type="text/html" href="views/policy/endorsement_list.dxview" />
+    <link rel="dx-template" type="text/html" href="views/policy/endorsement.dxview" />
+    <link rel="dx-template" type="text/html" href="views/policy/PaymentsView.dxview" />
+    <link rel="dx-template" type="text/html" href="views/proposal/embedded_form.dxview" />
+    <link rel="dx-template" type="text/html" href="views/proposal/application_form.dxview" />
+    <link rel="dx-template" type="text/html" href="views/claim/request_claim_list.dxview" />
+    <link rel="dx-template" type="text/html" href="views/claim/request_claim_form.dxview" />
+    <link rel="dx-template" type="text/html" href="views/commissions/commissions.dxview" />
+
+    <script type="text/javascript" src="views/auth/login.js"></script>
+    <script type="text/javascript" src="views/auth/user_login.js"></script>
+    <script type="text/javascript" src="views/auth/agent_login.js"></script>
+    <script type="text/javascript" src="views/auth/register.js"></script>
+    <script type="text/javascript" src="views/home/home.js"></script>
+    <script type="text/javascript" src="views/home/applications.js"></script>
+    <script type="text/javascript" src="views/home/Layout.js"></script>
+    <script type="text/javascript" src="views/home/main_dashboard.js"></script>
+    <script type="text/javascript" src="views/proposal/proposal_form.js"></script>
+    <script type="text/javascript" src="views/proposal/products_list.js"></script>
+    <script type="text/javascript" src="views/quotation/get_quotation.js"></script>
+    <script type="text/javascript" src="views/quotation/policy_det.js"></script>
+    <script type="text/javascript" src="views/quotation/caputre_quotation.js"></script>
+    <script type="text/javascript" src="views/policy/make_a_payment.js"></script>
+    <script type="text/javascript" src="views/policy/view_statement.js"></script>
+    <script type="text/javascript" src="views/policy/endorsement_list.js"></script>
+    <script type="text/javascript" src="views/policy/endorsement.js"></script>
+    <script type="text/javascript" src="views/policy/PaymentsView.js"></script>
+    <script type="text/javascript" src="views/proposal/embedded_form.js"></script>
+    <script type="text/javascript" src="views/proposal/application_form.js"></script>
+    <script type="text/javascript" src="views/claim/request_claim_list.js"></script>
+    <script type="text/javascript" src="views/claim/request_claim_form.js"></script>
+    <script type="text/javascript" src="views/commissions/commissions.js"></script>
+
+    <script type="text/javascript" src="views/js/helpers/sync_params.js"></script>
+    <script type="text/javascript" src="views/js/helpers/db_helper.js"></script>
+    <script type="text/javascript" src="views/js/helpers/policy_det_data.js"></script>
+    <script type="text/javascript" src="views/js/helpers/access_levels.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="views/css/custom/custom.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+    <script type="text/javascript" src="views/css/cldr.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="views/css/styles.min.css" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <!--<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+    <script src="assets/js/main.js"></script>-->
+    <!--<script type="text/javascript" src="css/static/js/app.js"></script>-->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
+    <script src="assets/vendor/js/helpers.js"></script>
+    <script src="assets/js/config.js"></script>
+
+
+    <script src="assets/vendor/libs/popper/popper.js"></script>
+    <script src="assets/vendor/js/bootstrap.js"></script>
+    <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="assets/vendor/js/menu.js"></script>
+    <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboards-analytics.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+</head>
+<body>
+    <div class="dx-viewport"></div>
+</body>
+</html>

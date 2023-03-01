@@ -1,0 +1,137 @@
+<div class="custom-layout" data-options="dxLayout : { name: 'custom' } " >
+    <div class="content" style="min-height:100vh; min-width:100%; font-weight:100;">
+
+      
+            <div class="wrapper">
+                <!-- Sidebar  -->
+                <nav id="sidebar">
+
+                    <!--<div class="sidebar-header">
+        <h3 class="text-white">
+            Welcome, </br>
+            Kevin Wachira
+        </h3>
+        <strong>KW</strong>
+    </div>-->
+                    <br />
+                    <div align="left"><img class="img-fluid" src="images/logo.png" /></div>
+                    <br /><br />
+                    <div id="custom" style="padding-top:15px;" data-bind="dxTreeView : { dataStructure: 'plain', keyExpr: 'nodeId', expandAllEnabled: true, expandEvent: 'click' }">
+                        <div data-options="dxTemplate : { name: 'item' }" data-bind="dxAction: onExecute">
+                            <div class="navitem" data-bind="text: title"></div>
+                        </div>
+                    </div>
+
+                    <!--<ul class="list-unstyled components">
+        <li class="active">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Home 1</a>
+                </li>
+                <li>
+                    <a href="#">Home 2</a>
+                </li>
+                <li>
+                    <a href="#">Home 3</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-briefcase"></i>
+                About
+            </a>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-copy"></i>
+                Pages
+            </a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Page 1</a>
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-image"></i>
+                Portfolio
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-question"></i>
+                FAQ
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-paper-plane"></i>
+                Contact
+            </a>
+        </li>
+    </ul>-->
+
+
+                </nav>
+                <!-- Page Content  -->
+                <div id="content">
+
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+
+                            <button id="sidebarCollapse">
+                                <i class="fa fa-bars"></i>
+                                <!--<span class="sr-only">Toggle Menu</span>-->
+                                <span style="font-size:30px;cursor:pointer">&#9776;</span>
+                            </button>
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fa fa-bars"></i>
+                            </button>
+
+                           
+                            <a href="#" class="nav_link"> 
+                            <i class='bx bx-log-out nav_icon'></i>
+                            <span class="nav_name">Sign Out</span> 
+                            </a>
+                            <!--<ul class="nav navbar-nav ml-auto">
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Log Out</a>
+        </li>
+    </ul>-->
+                        </div>
+                        
+                    </nav>
+
+
+                    <div class="uk-animation-slide-left uk-animation-slide-right" style="background-color:#fff !important; width:100%" id="contentPlaceholder" data-options="dxContentPlaceholder : { name: 'content', contentCssPosition: 'static' } ">
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+        </script>
+
+    </div>
+</div>

@@ -1,0 +1,112 @@
+﻿/*handle the aluda layout here*/
+body {
+    font-family: "Lato", sans-serif;
+}
+.sidenav {
+    padding-left: 5px;
+    min-height: 100%;
+    width: 250px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    /*overflow-y: hidden;*/
+    transition: 0.5s;
+    padding-top: 10px;
+    box-shadow: 0.15rem 0 1.75rem 0 rgb(33 40 50 / 15%) !important;
+        color: #212832;
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+#main {
+    transition: margin-left .5s;
+    /*padding: 16px;*/
+    margin-Left: 250px;
+}
+
+/*@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}*/
+
+@media (max-width: 768px) {
+    #mySidenav {
+        width: 0px;
+  
+     
+    }
+
+
+    #main {
+    margin-Left: 0px;
+}
+   
+
+}
+
+
+
+.logoutbtn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+
+.navitem {
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    position: relative;
+    color: #212832;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    text-decoration: none;
+
+}
+
+
+.bg-gradient-primary-to-secondary {
+    background-color: #0061f2 !important;
+    background-image: linear-gradient(135deg, #0061f2 0%, rgb(0 58 199 / 80%) 100%) !important;
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}

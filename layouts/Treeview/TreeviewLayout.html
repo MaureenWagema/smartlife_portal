@@ -1,0 +1,152 @@
+﻿<html>
+<head>
+    
+</head>
+<body style="overflow:hidden !important">
+    <div class="treeview-layout" data-options="dxLayout : { name: 'treeview', platform: 'generic' } ">
+        <div>
+            <div style="">
+
+                <div id="mySidenav" class="sidenav">
+                    <!--Cassoa image here-->
+                    <br />
+
+                    <div class="bg-white">
+                        <div align="left"><img class="img-fluid" src="images/logo.png" /></div>
+                    </div>
+                   
+
+                    <!-- menu profile quick info -->
+                    <!--<div class="profile clearfix">
+        <div class="profile_pic">
+            <img src="images/user.png" alt="..." class="img-circle profile_img">
+        </div>
+        <div class="profile_info">
+            <span>Welcome,</span>
+            <div id="user_fullnames"></div>
+        </div>
+    </div>-->
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!--Put the treelist for navigation here-->
+
+                    <div style="">
+                        <nav id="treeView" style="padding-top:15px;" data-bind="dxTreeView : { dataStructure: 'plain', keyExpr: 'nodeId', expandAllEnabled: true, expandEvent: 'click' }">
+                            <div data-options="dxTemplate : { name: 'item' }" data-bind="dxAction: onExecute">
+                                <div class="navitem" style="padding-left:1rem;" data-bind="text: title, attr: { id : id}"></div>
+                            </div>
+                        </nav>
+                    </div>
+                   
+                </div>
+
+                <div id="main" style="background-color:#E8ECF2">
+
+                   
+                  
+                    <header class="page-header page-header-dark bg-gradient-primary-to-secondary" style="padding-bottom:6em">
+                        <div class="container-xl px-4">
+                            <div class="page-header-content ">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-12 pt-1 ">
+                                        <div class="d-flex justify-content-between" style="width:100%;">
+                                            <span style="font-size:30px;cursor:pointer; color:#fff" onclick="btnslide()">&#9776;</span>
+                                            <button type="button" class="logoutbtn" data-bind="click: doLogout"> <span class="fa fa-sign-out text-white"></span> <span class="text-white"> Log Out</span> </button>
+                                        </div>
+                                        <div class="pt-4">
+                                            <h3 class="text-white">
+                                                <span class="page-header-icon "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span>
+                                                <span id="viewName"></span>
+                                            </h3>
+                                        
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-12 col-xl-auto mt-4">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="container-xl px-4" style="margin-top:-8em">
+                        <div class="row">
+                            <div class="col-xl-12 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body h-100 p-5">
+                                        <div class="row">
+                                        
+                                            <div style="min-height:60vh; max-height:auto;">
+                                                <!--Put the main items contents here.-->
+                                                <div>
+                                                    <div class="content" style="background-color:white" data-options="dxContentPlaceholder : { name: 'content', contentCssPosition: 'static' } "></div>
+                                                </div>
+                                                <div class="footer-gap"></div>
+                                            </div>
+                                        
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                      
+                    </div>
+
+
+               
+                    
+                  
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function btnslide() {
+        view_nav.byKey(1).done(function (values) {
+            //update the values
+            //console.log(values);
+            var val_i = values.i;
+            var var_i = 0;
+            if (val_i == 0) {
+                var_i = 1;
+            } else {
+                var_i = 0;
+            }
+            
+            if (var_i == 0) {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            } else if (var_i == 1) {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+
+            view_nav.update(1, {
+                i: var_i
+            }).done(function (values, key) {
+                //console.log(values);
+            }).fail(function (error) {
+                console.log(error);
+            });
+            
+        }).fail(function (error) {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            view_nav.insert({
+                id: 1,
+                i: 1,
+            }).done(function (values, key) {
+                
+            }).fail(function (error) {
+                console.log(error);
+            });
+        });
+    }
+</script>
