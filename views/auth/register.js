@@ -96,7 +96,7 @@
                 if (result.success == true) {
                     //console.log(result.record_id);
                     //navigate to the my applications screen
-                    SmartLife.app.navigate('login', { root: true });
+                    SmartLife.app.navigate('agent_login', { root: true });
                 } else {
                     viewModel.show_test(result.msg, 'error');
                 }
