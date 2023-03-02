@@ -57,13 +57,13 @@
         display_details: function (item) {
             //$('#background_img').empty();
             if (item == "1") {
-                plan_code = "02";
+                plan_code = "2";
                 //var img_path = ;
                 //$("#background_img").css({ "background-image": "url('images/gallery/esb.png')", "opacity": "0.9", "background-repeat": "no-repeat", "object-fit": "fill" });
                 $('#esb').empty();
                 $('#esb').append(pol_det.get_esb());
             } else if (item == "2") {
-                plan_code = "29";
+                plan_code = "37";
                 //$("#background_img").css({ "background-image": "url('images/gallery/funeral_plan.png')", "opacity": "0.9", "background-repeat": "no-repeat" });
                 $('#gfp').empty();
                 $('#gfp').append(pol_det.get_gfp());

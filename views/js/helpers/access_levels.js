@@ -65,9 +65,9 @@
         //pos
         else if (SmartLife.login_type == 3) {
             SmartLife.config.navigation[2].visible(true);
-            SmartLife.config.navigation[3].visible(true);
+            //SmartLife.config.navigation[3].visible(true);
             SmartLife.config.navigation[4].visible(true);
-            SmartLife.config.navigation[5].visible(true);
+            //SmartLife.config.navigation[5].visible(true);
             SmartLife.config.navigation[7].visible(true);
             SmartLife.config.navigation[9].visible(true);
             SmartLife.config.navigation[10].visible(true);

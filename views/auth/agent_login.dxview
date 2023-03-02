@@ -41,5 +41,12 @@
         </div>
 
 
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
     </div>
 </div>

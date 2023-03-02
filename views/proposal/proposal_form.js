@@ -393,17 +393,17 @@
                 viewModel.get_paymode("37");//29
                 //paymode_arr = [{ id: 90, description: 'MONTHLY' }];
                 //formInstance.getEditor("paymode_code").option("dataSource", paymode_arr);
-                //formPolicyDetailsInstance.updateData("plan_code", "37");
+                formPolicyDetailsInstance.updateData("plan_code", "37");
             }
             if (plan_code == "2") {
                 //esb
                 viewModel.get_paymode("2");
-                //formPolicyDetailsInstance.updateData("plan_code", "2");
+                formPolicyDetailsInstance.updateData("plan_code", "2");
             }
             if (plan_code == "10") {
                 //anidaso
                 viewModel.get_paymode("10");
-                //formPolicyDetailsInstance.updateData("plan_code", "10");
+                formPolicyDetailsInstance.updateData("plan_code", "10");
             }
         },
         get_client_details: function () {
@@ -413,7 +413,7 @@
             });
             get_client.DBget("client/getClientDetails?client_no=" + SmartLife.clientno + "&is_micro=" + SmartLife.is_micro, {}).done(function (result) {
                 viewModel.LoadPanelShown(false);
-                if (result.success == true) {
+                if (result.success) {
                     console.log(result.client_no);
                     console.log(result.policy_arr);
                     $("#dxFormPersonal").dxForm({
@@ -439,6 +439,7 @@
                 } else {
                     viewModel.show_test(result.msg, 'error');
                 }
+                
             }).fail(function () {
                 viewModel.LoadPanelShown(false);
                 viewModel.show_test('Cannot connect to server check Internet connectivity', 'error');
@@ -447,13 +448,26 @@
         viewShown: function () {
             //tabs_form();
             //design the form
-            
             if (parseInt(rcd_id) > 0) {
                 //get client details
                 viewModel.get_details();
             } else {
                 //just display the client details only
-                viewModel.get_client_details();
+                if (SmartLife.clientno != undefined && SmartLife.clientno != "") {
+                    viewModel.get_client_details();
+                } else {
+                    viewModel.assign_plan();
+                    if (formHealthDetailsInstance.getEditor("qn") != undefined) {
+                        console.log("here healthinfo");
+                        formHealthDetailsInstance.getEditor("qn").option("dataSource", SmartLife.Healthinfo);
+                    }
+                    qn_intermediary = SmartLife.Healthinfo;
+                    if (formHealthDetailsInstance.getEditor("family_history") != undefined) {
+                        console.log("here again famDisease");
+                        formHealthDetailsInstance.getEditor("family_history").option("dataSource", SmartLife.FamDisease);
+                    }
+                    fm_health_intermediary = SmartLife.FamDisease;
+                }
             }
             
         },
@@ -1050,7 +1064,7 @@
         },
         display_vs_esb: function () {
             //inv_prem, rider_prem, transfer_charge, riders
-            viewModel.show_second_life();
+            //viewModel.show_second_life();
             formPolicyDetailsInstance.itemOption("inv_premium", "visible", true);
             formPolicyDetailsInstance.itemOption("rider_premium", "visible", true);
             formPolicyDetailsInstance.itemOption("transfer_charge", "visible", true);
@@ -1067,7 +1081,7 @@
                 }
             }
             console.log(paymode_arr);
-            //formInstance.getEditor("paymode_code").option("dataSource", paymode_arr);
+            formPolicyDetailsInstance.getEditor("paymode_code").option("dataSource", paymode_arr);
         },
 
 
@@ -1526,7 +1540,7 @@
                     editorType: "dxLookup",
                     dataField: "plan_code",
                     editorOptions: {
-                        readOnly: false,
+                        readOnly: true,
                         closeOnOutsideClick: true,
                         dataSource: SmartLife.planinfo,
                         displayExpr: 'description',
@@ -1626,7 +1640,7 @@
                     editorType: "dxLookup",
                     dataField: "paymode_code",
                     editorOptions: {
-                        dataSource: [{ id: 90, description: 'MONTHLY' }],
+                        dataSource: [],
                         closeOnOutsideClick: true,
                         displayExpr: 'description',
                         valueExpr: 'id'

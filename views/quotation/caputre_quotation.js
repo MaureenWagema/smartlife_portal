@@ -5,6 +5,7 @@
     var formDependantInstance;
     var get_data = JSON.parse(params.item);
     var plan_code = get_data['plan_code'];
+    console.log(plan_code);
 
 
     var viewModel = {
@@ -77,13 +78,13 @@
         },
 
         assign_plan: function () {
-            if (plan_code == "29") {
+            if (plan_code == "37") {
                 //funeral policy
-                formQuoteInstance.updateData("plan_code", "29");
+                formQuoteInstance.updateData("plan_code", "37");
             }
-            if (plan_code == "02") {
+            if (plan_code == "2") {
                 //funeral policy
-                formQuoteInstance.updateData("plan_code", "02");
+                formQuoteInstance.updateData("plan_code", "2");
             }
         },
         viewShown: function () {
@@ -465,17 +466,17 @@
                     editorType: "dxLookup",
                     dataField: "plan_code",
                     editorOptions: {
-                        readOnly: false,
+                        readOnly: true,
                         dataSource: SmartLife.planinfo,
                         displayExpr: 'description',
-                        valueExpr: 'plan_code',
+                        valueExpr: 'plan_id',
                         onValueChanged: function (e) {
                             viewModel.default_vs_premiums();
                             formQuoteInstance.updateData("pol_fee", 1);
-                            if (plan_code == "29") {
+                            if (plan_code == "37") {
                                 viewModel.display_vs_funeral_premium();
                             }
-                            if (plan_code == "02") {
+                            if (plan_code == "2") {
                                 viewModel.display_vs_esb();
                             }
                         }

@@ -9,7 +9,7 @@
             <div data-bind="dxButton: { text: 'REQUEST NEW CLAIM', icon: 'plus', onClick: add_claim, type: 'default' }"></div>
         </div>
         <div align="center" class="dx-fieldset-header">Applied Claims</div>
-        <div id="gridContainer" data-bind="dxDataGrid: { dataSource: claim_Store,wordWrapEnabled: true,showColumnHeaders:true, columns: claim_columns ,  height: '100%', width: '100%', scrolling:{mode:'standard'}, paging: {enabled: false}, searchPanel: { visible: false, width: 350 }}">
+        <div id="gridContainer" data-bind="dxDataGrid: { dataSource: claim_Store,wordWrapEnabled: true,showColumnHeaders:true, columns: claim_columns ,  height: '100%', width: '100%', scrolling:{mode:'standard'}, paging: {enabled: false}, searchPanel: { visible: true, width: 350 }}">
             <div data-options="dxTemplate:{ name:'cellTemplate' }">
                 <div class="img-container">
                     <img data-bind="attr:{src: $data.value}" />
