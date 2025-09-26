@@ -1,0 +1,80 @@
+<div data-options="dxView : { name: 'request_claim_form', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } },
+             { location: 'after' , widget: 'dxButton' , options: { icon: 'refresh' , text: '' , onClick: refresh_btn, type:'normal' } }
+             ],visible: true }">
+        </div>
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <!--Pop up for guaridan and payment methods-->
+        <div data-bind="dxPopup:{ fullScreen: true, visible:pop_beneficiary, onHiding: hide_beneficiary,
+             toolbarItems: [{ text:'EDIT BENEFICIARY', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormBeneficiary" data-bind="dxForm: dxFormBeneficiary"></div>
+            </div>
+        </div>
+        <div data-bind="dxPopup:{ fullScreen: true, visible:pop_new_beneficiary, onHiding: hide_pop_new_beneficiary,
+             toolbarItems: [{ text:'ADD NEW BENEFICIARY', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormNewBeneficiary" data-bind="dxForm: dxFormNewBeneficiary"></div>
+            </div>
+        </div>
+
+        <!--OTP popup form-->
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_OTP, onHiding: hide_pop_OTP,
+             toolbarItems: [{ text:'OTP', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormOTP" data-bind="dxForm: dxFormOTP"></div>
+            </div>
+        </div>
+
+
+
+        <div data-bind="dxPopup:{ fullScreen: true, visible:popup_sig, onHiding: hide_popup_sig,
+             toolbarItems: [{ text:'CLIENT SIGNATURE', location: 'center' }],
+        }">
+
+
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div id="signatureparent">
+                    <div id="signature" style="min-height:400px;"></div>
+                </div>
+                <br /><br />
+                <div class="centre" style="width:100%;" align="center">
+                    <span align="right" data-bind="dxButton: { type: 'default', text: 'CLOSE', icon: 'close', onClick: hide_popup_sig, width: 120 }"></span>
+                    <span data-bind="dxButton: { type: 'danger', text: 'SUBMIT', icon: 'check', onClick: submit_claim, width: 120 }"></span>
+                </div>
+            </div>
+        </div>
+        <!--<br />
+    <div style="height:40px" class="panel-title">
+        <div><strong style="margin-top:10px; font-size:large;float:left;">CLAIM FORM</strong></div>
+    </div>-->
+
+        <div id="svg_wrap"></div>
+        <section>
+            <h4 class="mb-0 mt-2 text-primary">CLAIM DETAILS</h4>
+            <hr class="mt-2 mb-4">
+            <div style="padding:2px" id="dxFormClaimRequest" data-bind="dxForm: dxFormDClaimRequest"></div>
+        </section>
+        <section>
+            <h4 class="mb-0 mt-2 text-primary">SUBMIT</h4>
+            <hr class="mt-2 mb-4">
+            <div style="padding:2px" id="dxFormDClaimSubmit" data-bind="dxForm: dxFormDClaimSubmit"></div>
+        </section>
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

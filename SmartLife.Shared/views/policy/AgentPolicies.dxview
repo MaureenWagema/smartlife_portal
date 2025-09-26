@@ -1,0 +1,214 @@
+<div data-options="dxView : { name: 'AgentPolicies', title: '', disableCache: false } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_prompt_payment, onHiding: hide_prompt_payment,
+             toolbarItems: [{ text:'PROMPT PAY', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormPay" data-bind="dxForm: dxFormPay"></div>
+            </div>
+        </div>
+
+        <!--TODO POP UP grid to with client policies filtered using staff no-->
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_policy_enquiry, onHiding: hide_policy_enquiry,
+             toolbarItems: [{ text:'POLICY ENQUIRY', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div id="gridpel" data-bind="dxDataGrid: {
+                                dataSource: applications_store ,
+                                columns: applications_columns,
+                                columnHidingEnabled: true,
+                                wordWrapEnabled: true,
+                                columnMinWidth: 150,
+                                allowColumnResizing: true,
+                                height: '100%',
+                                scrolling: {
+                                    mode: 'standard'
+                                },
+                                grouping: {
+	                                contextMenuEnabled: true
+                                },
+                                groupPanel: {
+	                                visible: true
+                                },
+                                searchPanel: {
+                                    highlightCaseSensitive: false,
+                                    highlightSearchText: true,
+                                    placeholder: 'Search...',
+                                    searchVisibleColumnsOnly: true,
+                                    text: '',
+                                    visible: true,
+                                    width: 250
+                                },
+                                editing: {
+                                    allowUpdating: false,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+                                summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Policies={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Sum={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [{
+                                        column: 'ID',
+                                        summaryType: 'count'
+                                    }]
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 20
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                                headerFilter: { visible: true },
+                                filterRow: {
+                                    visible: true,
+                                    applyFilter: 'auto',
+                                },
+                            }"></div>
+            </div>
+        </div>
+
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_reccur_momo, onHiding: hide_recur_momo,
+             toolbarItems: [{ text:'REGISTER RECURRING MOMO BILLING', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormRecur" data-bind="dxForm: dxFormRecur"></div>
+            </div>
+        </div>
+
+        <hr />
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+        <hr />
+
+        <div align="center" class="dx-fieldset-header">POLICIES</div>
+
+        <div class="panel panel-info">
+            <div class="panel-body">
+                <div style="padding-right:0px; padding-left:0px;">
+                    <div style="padding:0px">
+
+                        <div id="gridpel" data-bind="dxDataGrid: {
+                                dataSource: policies_Store ,
+                                columns: policies_columns,
+                                columnHidingEnabled: true,
+                                wordWrapEnabled: true,
+                                allowColumnResizing: true,
+                                columnResizingMode: 'nextColumn',
+                                columnMinWidth: 50,
+                                grouping: {
+	                                contextMenuEnabled: true,
+                                    autoExpandAll: false
+                                },
+                                groupPanel: {
+	                                visible: false
+                                },
+                                searchPanel: {
+                                    highlightCaseSensitive: false,
+                                    highlightSearchText: true,
+                                    placeholder: 'Search...',
+                                    searchVisibleColumnsOnly: true,
+                                    text: '',
+                                    visible: true,
+                                    width: 200
+                                },
+                                editing: {
+                                    allowUpdating: true,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+                                summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Policies={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Premiums={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [{
+                                        column: 'policy_no',
+                                        summaryType: 'count',
+                                        valueFormat:{
+                                                format: formatSummary,
+                                            }
+                                    },
+                                    {
+                                            column: 'TotalPremium',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                    }],
+                                    groupItems: [
+                                        {
+                                            column: 'policy_no',
+                                            summaryType: 'count',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'name',
+                                            displayFormat: ' {0} Cases',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            }
+                                        },
+                                        {
+                                            column: 'TotalPremium',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'TotalPremium',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        }
+                                    ]
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 20
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                                headerFilter: { visible: true },
+                                filterRow: {
+                                    visible: false,
+                                    applyFilter: 'auto',
+                                }
+                            }"></div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

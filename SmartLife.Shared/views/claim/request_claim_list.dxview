@@ -1,0 +1,127 @@
+<div data-options="dxView : { name: 'request_claim_list', title: '' } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <!--<div data-bind="dxCommand: { title: 'Back', id: 'back', type: 'back', visible: backButtonVisible, onExecute: backButtonAction  }"></div>-->
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div align="left" style="width:100%;padding-bottom:10px;">
+            <div data-bind="dxButton: { text: 'REQUEST NEW CLAIM', icon: 'plus', onClick: add_claim, type: 'default',visible:vs_add_claim }"></div>
+        </div>
+        <div align="center" class="dx-fieldset-header">Applied Claims</div>
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+        <br />
+        <div id="gridpel" data-bind="dxDataGrid: {
+                                dataSource: claim_Store ,
+                                columns: claim_columns,
+                                groupExpandMode: 'buttonClick',
+                                columnHidingEnabled: true,
+                                wordWrapEnabled: true,
+                                allowColumnResizing: true,
+
+                                grouping: {
+	                                contextMenuEnabled: true
+                                },
+                                groupPanel: {
+	                                visible: true
+                                },
+                                export: {
+                                    allowExportSelectedData:true,
+                                    enabled:true,
+                                    texts: {
+                                        exportAll:'Export all data',
+                                        exportSelectedRows:'Export selected rows'
+
+                                    },
+                                },
+                                searchPanel: {
+                                    highlightCaseSensitive: false,
+                                    highlightSearchText: true,
+                                    placeholder: 'Search...',
+                                    searchVisibleColumnsOnly: true,
+                                    text: '',
+                                    visible: true,
+                                    width: 200
+                                },
+                                editing: {
+                                    allowUpdating: true,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+                                summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Total Enquiries={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Total={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'policy_no',
+                                            summaryType: 'count'
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'policy_no',
+                                            summaryType: 'count',
+                                            showInGroupFooter: true,
+                                            showInColumn: 'policy_no',
+                                            displayFormat: '{0} Claims'
+                                        }
+                                    ]
+                                },
+                                paging: {
+                                    enabled: false,
+                                    pageSize: 20
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                                headerFilter: { visible: true },
+                                filterRow: {
+                                    visible: true,
+                                    applyFilter: 'auto',
+                                },
+                            }"></div>
+        <!--<div style="margin-top:0px;" data-bind="dxList: {
+                dataSource: claim_Store,
+                height: '80%',
+                onItemClick: claim_click
+            }">
+            <div data-options="dxTemplate:{ name:'item' }">
+                <div class="uk-card uk-card-default uk-width-1-1@m">
+                    <div class="uk-card-header">
+                        <div class="uk-grid uk-flex-middle" uk-grid>
+                            <div style="display:inline-block; margin: 1px; width:100%">
+                                <p><b data-bind="text: reason, visible: false"></b></p>
+                                <p><b>Policy No: </b><b data-bind="text: policy_no"></b></p>
+                                <p><b>Claim Type: </b><b data-bind="text: claim_type"></b></p>
+                                <p><b>Total Cash Value: </b><b data-bind="text: tot_proceeds"></b></p>
+                                <p><b>Amount Available: </b><b data-bind="text: net_pay"></b></p>
+                                <p><b>Requested Amount: </b><b data-bind="text: amount_applied"></b></p>
+                                <p style="float:right; font-size:smaller; color:#808080; top:-3px;"><span data-bind="text: notification_date"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>-->
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

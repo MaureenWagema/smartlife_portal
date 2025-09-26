@@ -1,0 +1,7 @@
+<div data-options="dxView : { name: 'loan_details', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        
+
+
+    </div>
+</div>

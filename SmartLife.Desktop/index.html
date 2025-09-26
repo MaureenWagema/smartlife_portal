@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="dx-theme" data-theme="android5.light" href="css/dx.android5.light.css" data-active="false" />
+    <link rel="stylesheet" type="text/css" href="css/dx.spa.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="css/dx.light.css" data-active="true" />
+    <link rel="dx-theme" data-theme="light.compact" href="css/dx.light.compact.css" data-active="true" />
+    <link rel="dx-theme" data-theme="contrast" href="css/dx.contrast.css" data-active="true" />
+    <link rel="dx-theme" data-theme="contrast.compact" href="css/dx.contrast.compact.css" data-active="true" />
+    <link rel="dx-theme" data-theme="dark.compact" href="css/dx.dark.compact.css" data-active="true" />
+
+    <title>SmartLife</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">-->
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval' blob:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+
+
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <!--Custom css-->
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="css/static/img/icons/icon-48x48.png" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/static/css/app.css" />-->
+    <!--<script type="text/javascript" src="css/src/js/app.js"></script>
+    <script type="text/javascript" src="css/src/js/modules/bootstrap.js"></script>
+    <script type="text/javascript" src="css/src/js/modules/sidebar.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/materialdesignicons.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/materialdesignicons.min.css" />
+
+    <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+    <!--
+        Other available themes:
+        <link rel="stylesheet" href="css/dx.dark.css" />
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/pdf.js"></script>
+    <script type="text/javascript" src="js/pdf.worker.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/knockout-latest.js"></script>
+
+
+
+    <!-- Read the Localization section of the migration guide for more details http://dxpr.es/1TXqrVS -->
+    <!--
+    <script type="text/javascript" src="js/cldr.min.js"></script>
+    <script type="text/javascript" src="js/cldr/event.min.js"></script>
+    <script type="text/javascript" src="js/cldr/supplemental.min.js"></script>
+
+    <script type="text/javascript" src="js/globalize.min.js"></script>
+    <script type="text/javascript" src="js/globalize/message.min.js"></script>
+    <script type="text/javascript" src="js/globalize/number.min.js"></script>
+    <script type="text/javascript" src="js/globalize/date.min.js"></script>
+    <script type="text/javascript" src="js/globalize/currency.min.js"></script>
+    -->
+
+    <script type="text/javascript" src="js/quill.min.js"></script>
+
+    <!--<script type="text/javascript" src="css/jszip.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script type="text/javascript" src="js/dx.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
+    <script src="https://unpkg.com/devextreme-intl@18.1/dist/devextreme-intl.min.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/18.1.18/js/localization/dx.messages.de.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/18.1.18/js/localization/dx.messages.ru.js"></script>
+    <!--
+    <script type="text/javascript" src="js/dx.all.debug.js"></script>
+    -->
+    <!--Link to signature pad-->
+    <script src="js/libs/modernizr.js"></script>
+    <script src="js/src/jSignature.js"></script>
+    <script src="js/src/plugins/jSignature.CompressorBase30.js"></script>
+    <script src="js/src/plugins/jSignature.CompressorSVG.js"></script>
+    <script src="js/src/plugins/jSignature.UndoButton.js"></script>
+    <script src="js/src/plugins/signhere/jSignature.SignHere.js"></script>
+    <!--------------------------->
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script type="text/javascript" src="smartlife.shared.config.js"></script>
+    <script type="text/javascript" src="smartlife.config.js?v=18.3"></script>
+    <script type="text/javascript" src="index.js?v=18.3"></script>
+    <script type="text/javascript" src="data/db.js"></script>
+    <!-- Layouts -->
+    <link rel="stylesheet" type="text/css" href="layouts/Desktop/DesktopLayout.css" />
+    <link rel="dx-template" type="text/html" href="layouts/Desktop/DesktopLayout.html" />
+    <script type="text/javascript" src="layouts/Desktop/DesktopLayout.js"></script>
+    <link rel="stylesheet" type="text/css" href="layouts/Custom/Custom.css" />
+    <link rel="dx-template" type="text/html" href="layouts/Custom/Custom.html" />
+    <script type="text/javascript" src="layouts/Custom/Custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="layouts/Empty/EmptyLayout.css?v=18.3" />
+    <link rel="dx-template" type="text/html" href="layouts/Empty/EmptyLayout.html?v=18.3" />
+    <script type="text/javascript" src="layouts/Empty/EmptyLayout.js?v=18.3"></script>
+    <link rel="stylesheet" type="text/css" href="layouts/Treeview/TreeviewLayout.css?v=18.3" />
+    <link rel="dx-template" type="text/html" href="layouts/Treeview/TreeviewLayout.html?v=18.3" />
+    <script type="text/javascript" src="layouts/Treeview/TreeviewLayout.js?v=18.3"></script>
+    <!--<link rel="stylesheet" type="text/css" href="views/custom css/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="views/custom css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css" />-->
+    <link href="css/custom.min.css" rel="stylesheet">
+
+
+    <!--<link rel="stylesheet" type="text/css" href="views/custom css/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="views/custom css/home.css" />
+    <link rel="stylesheet" type="text/css" href="views/custom css/dashstyle.css" />-->
+    <!-- Views -->
+
+    <link rel="dx-template" type="text/html" href="views/about.html" />
+    <link rel="dx-template" type="text/html" href="views/blank.html" />
+    <link rel="dx-template" type="text/html" href="views/auth/login.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/user_login.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/agent_login.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/register.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/bancassurance.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/creditLife.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/group_login.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/member_login.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/forgot_password.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/confrim_password.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/NotFound.dxview?v=18.3" />
+
+    <link rel="dx-template" type="text/html" href="views/auth/broker_forgot.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/broker_register.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/client_forgot.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/client_register.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/group_forgot.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/group_register.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/AgentAccount.dxview?v=18.3" />
+
+    <link rel="dx-template" type="text/html" href="views/home/home.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/user_home.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/agent_home.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/applications.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/Layout.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/main_dashboard.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/MainDashboard.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/contact_us.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/FAQ.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/sales.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/sales_grid_summary.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/proposal/proposal_form.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/proposal/products_list.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/quotation/get_quotation.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/quotation/policy_det.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/quotation/caputre_quotation.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/make_a_payment.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/view_statement.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/endorsement_list.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/endorsement.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/PaymentsView.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/policy_enquiry.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/worksheet.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/policy_schedule.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/premium_statement.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/reports.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/AgentPolicies.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/PaySourceData.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/loan_enquiry.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/source_data.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/activities_list.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/activity_form.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/loan_quotation.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/premium_source.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/policy/wrongful_from_slams.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/proposal/embedded_form.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/proposal/application_form.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/request_claim_list.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/request_claim_form.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/agent_loan.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/agent_loan_list.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/creditlife_req_claim_list.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/creditlife_req_claim_form.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/claim_enquiries.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/claim/signature_claims.dxview?v=18.3" />
+
+    <link rel="dx-template" type="text/html" href="views/commissions/commissions.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/commissions/micro_collections.dxview?v=18.3" />
+
+    <link rel="dx-template" type="text/html" href="views/analysis/AgentAllSale.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/analysis/AgentOfficeSales.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/analysis/AgentPerformance.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/analysis/AgentsAllSaleGrid.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/Group/group_home.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/Group/member_management.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/Group/add_member.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/Group/quote_group_list.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/Group/quote_group_form.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/Group/member_statement.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/Group/group_claims.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/auth/brokers.dxview?v=18.3" />
+    <link rel="dx-template" type="text/html" href="views/home/broker_home.dxview?v=18.3" />
+
+    <script type="text/javascript" src="views/auth/login.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/user_login.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/agent_login.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/register.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/bancassurance.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/creditLife.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/group_login.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/member_login.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/forgot_password.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/confrim_password.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/NotFound.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/AgentAccount.js?v=18.3"></script>
+
+    <script type="text/javascript" src="views/auth/broker_forgot.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/broker_register.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/client_forgot.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/client_register.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/group_forgot.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/group_register.js?v=18.3"></script>
+
+    <script type="text/javascript" src="views/home/home.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/user_home.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/agent_home.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/applications.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/Layout.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/main_dashboard.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/MainDashboard.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/contact_us.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/FAQ.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/sales.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/sales_grid_summary.js?v=18.3"></script>
+    <script type="text/javascript" src="views/proposal/proposal_form.js?v=18.3"></script>
+    <script type="text/javascript" src="views/proposal/products_list.js?v=18.3"></script>
+    <script type="text/javascript" src="views/quotation/get_quotation.js?v=18.3"></script>
+    <script type="text/javascript" src="views/quotation/policy_det.js?v=18.3"></script>
+    <script type="text/javascript" src="views/quotation/caputre_quotation.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/make_a_payment.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/view_statement.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/endorsement_list.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/endorsement.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/PaymentsView.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/policy_enquiry.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/worksheet.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/policy_schedule.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/premium_statement.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/reports.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/AgentPolicies.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/PaySourceData.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/loan_enquiry.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/source_data.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/activities_list.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/activity_form.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/loan_quotation.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/premium_source.js?v=18.3"></script>
+    <script type="text/javascript" src="views/policy/wrongful_from_slams.js?v=18.3"></script>
+    <script type="text/javascript" src="views/proposal/embedded_form.js?v=18.3"></script>
+    <script type="text/javascript" src="views/proposal/application_form.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/request_claim_list.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/request_claim_form.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/agent_loan.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/agent_loan_list.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/creditlife_req_claim_list.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/creditlife_req_claim_form.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/claim_enquiries.js?v=18.3"></script>
+    <script type="text/javascript" src="views/claim/signature_claims.js?v=18.3"></script>
+
+    <script type="text/javascript" src="views/commissions/commissions.js?v=18.3"></script>
+    <script type="text/javascript" src="views/commissions/micro_collections.js?v=18.3"></script>
+
+    <script type="text/javascript" src="views/analysis/AgentAllSale.js?v=18.3"></script>
+    <script type="text/javascript" src="views/analysis/AgentOfficeSales.js?v=18.3"></script>
+    <script type="text/javascript" src="views/analysis/AgentPerformance.js?v=18.3"></script>
+    <script type="text/javascript" src="views/analysis/AgentsAllSaleGrid.js?v=18.3"></script>
+    <script type="text/javascript" src="views/Group/group_home.js?v=18.3"></script>
+    <script type="text/javascript" src="views/Group/member_management.js?v=18.3"></script>
+    <script type="text/javascript" src="views/Group/add_member.js?v=18.3"></script>
+    <script type="text/javascript" src="views/Group/quote_group_list.js?v=18.3"></script>
+    <script type="text/javascript" src="views/Group/quote_group_form.js?v=18.3"></script>
+    <script type="text/javascript" src="views/Group/group_claims.js?v=18.3"></script>
+    <script type="text/javascript" src="views/Group/member_statement.js?v=18.3"></script>
+    <script type="text/javascript" src="views/auth/brokers.js?v=18.3"></script>
+    <script type="text/javascript" src="views/home/broker_home.js?v=18.3"></script>
+
+    <script type="text/javascript" src="views/js/helpers/sync_params.js?v=18.3"></script>
+    <script type="text/javascript" src="views/js/helpers/db_helper.js?v=18.3"></script>
+    <script type="text/javascript" src="views/js/helpers/policy_det_data.js?v=18.3"></script>
+    <script type="text/javascript" src="views/js/helpers/access_levels.js?v=18.3"></script>
+
+    <link rel="stylesheet" type="text/css" href="views/css/custom/custom.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+    <script type="text/javascript" src="views/css/cldr.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="views/css/styles.min.css" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <!--<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+    <script src="assets/js/main.js"></script>-->
+    <!--<script type="text/javascript" src="css/static/js/app.js"></script>-->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
+    <script src="assets/vendor/js/helpers.js"></script>
+    <script src="assets/js/config.js"></script>
+
+
+    <script src="assets/vendor/libs/popper/popper.js"></script>
+    <script src="assets/vendor/js/bootstrap.js"></script>
+    <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="assets/vendor/js/menu.js"></script>
+    <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboards-analytics.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf_viewer.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf_viewer.min.js"></script>
+
+    <script type="text/javascript" src="js/quill.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+
+
+</head>
+<body>
+    <div id="loadPanel"></div>
+    <div class="dx-viewport"></div>
+</body>
+</html>

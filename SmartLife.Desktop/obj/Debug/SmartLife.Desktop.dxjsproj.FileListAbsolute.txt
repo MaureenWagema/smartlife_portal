@@ -1,0 +1,2 @@
+D:\SoftClans\Projects\DevExtreme\SmartLife\SmartLife.Desktop\obj\Debug\SmartLife.Desktop.dxjsprojAssemblyReference.cache
+D:\SoftClans\Projects\DevExtreme\SmartLife\SmartLife.Desktop\obj\Debug\SmartLife.Desktop.dxjsproj.CoreCompileInputs.cache

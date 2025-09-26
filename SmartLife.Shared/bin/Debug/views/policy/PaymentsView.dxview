@@ -1,0 +1,34 @@
+<div data-options="dxView : { name: 'PaymentsView', title: 'PREMIUM SUMMARY', disableCache: true } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: true }">
+        </div>
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div class="dx-fieldset-header" align="center" data-bind="{ text: lblpolicy_no }"></div>
+
+        <div style="padding: 3px;  top: -3px" data-bind="dxList: {
+                dataSource: payment_Store,
+                height: '90%',
+            }">
+            <div data-options="dxTemplate:{ name:'item' }">
+                <div class="uk-card uk-card-default uk-width-1-1@m">
+                    <div class="uk-card-header">
+                        <div class="uk-grid uk-flex-middle" uk-grid>
+                            <div style="display:inline-block; margin: 1px; width:100%">
+                                <p><b>Amount:</b><b data-bind="text: Amount"></b></p>
+                                <p>Month:<span data-bind="text: period_month"></span></p>
+                                <p>Year: <span data-bind="text: period_year"></span></p>
+                                <p style="float:right; font-size:smaller; color:#808080; top:-3px;"><span data-bind="text: payment_date"></span></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div data-options="dxView : { name: 'reports', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div style="padding-bottom:10px;" id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: vs_toolbar }">
+        </div>
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <!--display any report-->
+        <div style="width:100%;height:100vh;overflow:auto;" align="center">
+            <div style="width: 100%;height:100vh;overflow:auto;" id="pdf-container"></div>
+        </div>
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

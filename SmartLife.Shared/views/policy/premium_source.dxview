@@ -1,0 +1,349 @@
+<div data-options="dxView : { name: 'premium_source', title: '' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div id="toolbar_des" data-bind="dxToolbar: {
+             dataSource: [
+             { location: 'after',visible:false, locateInMenu:'always' , widget: 'dxButton' , options: { icon: 'doc' , text: 'WRONGFUL DATA' , onClick: to_wrongful_data, type:'normal' } }
+             ],
+             visible: true }">
+        </div>
+
+        <!--Add form to display the search params-->
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchLoansDetails"></div>
+        <br />
+
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             visible: vs_employer_grid,
+             dataSource: source_store,
+             columnHidingEnabled: false,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             allowColumnResizing: true,
+             columns: source_columns ,
+             columnMinWidth: 130,
+             height: '100%',
+             width: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: true, width: 250 },
+             grouping: {
+	            contextMenuEnabled: true,
+                autoExpandAll: false
+             },
+             editing: {
+                                    allowUpdating: false,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false
+             },
+             summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: '{0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: '{0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'BankName',
+                                            summaryType: 'count',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            }
+                                        },
+                                        {
+                                            column: 'Premium',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExpectedAmount',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmount',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExcessAmount',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmountActual',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'BankName',
+                                            summaryType: 'count',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'BankName',
+                                            displayFormat: ' {0} ',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'Premium',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'Premium',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExpectedAmount',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'ExpectedAmount',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmount',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'AllocatedAmount',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExcessAmount',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'ExcessAmount',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmountActual',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'AllocatedAmountActual',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        }
+                                    ]
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 100
+                                },
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+        <!--Bank Grid-->
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             visible: vs_bank_grid,
+             dataSource: source_store,
+             columnHidingEnabled: false,
+             allowColumnResizing: true,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: bank_columns ,
+             columnMinWidth: 130,
+             height: '100%',
+             width: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: true, width: 250 },
+             grouping: {
+	            contextMenuEnabled: true,
+                autoExpandAll: false
+             },
+             editing: {
+                                    allowUpdating: false,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+             summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: '{0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: '{0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'BankName',
+                                            summaryType: 'count',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            }
+                                        },
+                                        {
+                                            column: 'Premium',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExpectedAmount',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmount',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExcessAmount',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmountActual',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'BankName',
+                                            summaryType: 'count',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'BankName',
+                                            displayFormat: ' {0} ',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'Premium',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'Premium',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExpectedAmount',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'ExpectedAmount',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmount',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'AllocatedAmount',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'ExcessAmount',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'ExcessAmount',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'AllocatedAmountActual',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'AllocatedAmountActual',
+                                            displayFormat: ' {0}',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        }
+                                    ]
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 100
+                                },
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 6000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

@@ -1,0 +1,393 @@
+<div class="custom-layout" data-options="dxLayout : { name: 'custom' } " >
+
+    <div class="wrapper" id="body-pd">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="mt-4">
+                <div id="header-content" class="pl-3">
+                    <img src="images/mozamboque.png" alt="avatar" class="rounded-circle img-fluid mb-3" style="max-width: 50px;">
+
+                    <h4>
+                        <span style="white-space: nowrap;">Mozambique</span>
+                    </h4>
+                    <p id="theUserEmail"></p>
+                </div>
+            </div>
+            <div id="scrollContainer" class="ps ps--active-y" style="max-height: calc(100% - 245px); position: relative;">
+                <div data-bind="dxScrollView: { height:'85vh', bounceEnabled: false }">
+                    <ul class="flex flex-col pl-0 mb-0">
+                        <li class="mt-0.5 w-full pointt" id="Dashboard">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#Dashboard'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg  bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-chart-arc"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
+                            </span>
+                        </li>
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">System Conf.</h6>
+                        </li>
+
+                        <li class="mt-0.5 w-full pointt" id="Countries">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#Countries'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-hexagon-outline"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Countries</span>
+                            </span>
+                        </li>
+                        <li class="mt-0.5 w-full pointt" id="languages">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#languages'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-translate"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Languages</span>
+                            </span>
+                        </li>
+                        <li class="mt-0.5 w-full pointt" id="idtypes">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#idtypes'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-account-card-details"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">ID  Types</span>
+                            </span>
+                        </li>
+
+                        
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">Global Conf.</h6>
+                        </li>
+                        <li class="mt-0.5 w-full pointt" id="companies">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#companies'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-bulletin-board"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Companies</span>
+                            </span>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="Branches">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#Branches'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-home-outline"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Branches</span>
+                            </span>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="Intermidiaries">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#Intermidiaries'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-access-point"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Intermediaries</span>
+                            </span>
+                        </li>
+
+                        <li class="mt-0.5 w-full pointt" id="currency">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#currency'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-access-point"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">currency</span>
+                            </span>
+                        </li>
+                        
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">Underwritting Conf.</h6>
+                        </li>
+
+                        <li class="mt-0.5 w-full pointt" id="vehicleCoverTypes">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#vehicleCoverTypes'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-cards"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Vehicle Covers</span>
+                            </span>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="VehicleSubclass">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#VehicleSubclass'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-car-estate"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Vehicle Subclass</span>
+                            </span>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="EndorsementTypes">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#EndorsementTypes'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-lead-pencil"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Endors. Types</span>
+                            </span>
+                        </li>
+
+
+
+
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">Users</h6>
+                        </li>
+                        <li class="mt-0.5 w-full pointt" id="clients">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#clients'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg  bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-account-multiple"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Clients</span>
+                            </span>
+                        </li>
+
+
+
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">Underwritting</h6>
+                        </li>
+                   
+
+
+
+                        <li class="mt-0.5 w-full pointt" id="Endorsements">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#Endorsements'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-lead-pencil"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Endorsements</span>
+                            </span>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="claimlistings">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#claimlistings'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-led-on"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Claims</span>
+                            </span>
+                        </li>
+
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">Certificates</h6>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="certificates">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#certificates'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-certificate"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Cert. Listings</span>
+                            </span>
+                        </li>
+
+                   
+
+                        
+
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">Reports.</h6>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="Policies">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#Policies'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-file-chart"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Policies</span>
+                            </span>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="IssuedCert">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#IssuedCert'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-certificate"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Issued Cert.</span>
+                            </span>
+                        </li>
+
+                        <li class="mt-0.5 w-full pointt" id="TransactionAudit">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#TransactionAudit'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-notification-clear-all"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Audit Logs</span>
+                            </span>
+                        </li>
+
+                     
+
+
+                        <li class="w-full mt-4">
+                            <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-size-xs opacity-60">Auth</h6>
+                        </li>
+                        <li class="mt-0.5 w-full pointt" id="roles">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#roles'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-lock"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Roles</span>
+                            </span>
+                        </li>
+                        <li class="mt-0.5 w-full pointt" id="permissions">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#permissions'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg  bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-shield"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Permissions</span>
+                            </span>
+                        </li>
+
+
+                        <li class="mt-0.5 w-full pointt" id="permissionRoles">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#permissionRoles'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg  bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-account-network"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">permission/Roles</span>
+                            </span>
+                        </li>
+
+
+
+
+                        <li class="mt-0.5 w-full pointt" id="TheuserAccounts">
+                            <span class="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" data-bind="dxAction:'#TheuserAccounts'">
+                                <span class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <span class="mdi mdi-account-convert"></span>
+                                </span>
+                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">System Users</span>
+                            </span>
+                        </li>
+
+
+                    
+
+                    </ul>
+
+
+                    <div style="min-height:5em"></div>
+
+                    <div style="min-height:10vh"></div>
+
+                </div>
+            
+             </div>
+         
+
+
+
+        </nav>
+        <!-- Page Content Holder -->
+        <div id="content">
+          
+
+            <div class="container sticky top-0 z-sticky">
+                <div class="flex flex-wrap -mx-3">
+                    <div class="w-full max-w-full px-3 flex-0">
+
+                        <!--Navbar-->
+                        <nav class="navbar  navbar-expand-lg top-0 left-0 right-0 z-30 flex flex-wrap items-center  py-2 mx-0 my-4 shadow-soft-2xl rounded-blur bg-gradient-fuchsia backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start" style="padding: 0.1em 0.8em !important;">
+
+                            <span class="navbar-brand">
+                                <button type="button" id="sidebarCollapse" class="navbar-btn d-inline-block align-top" style="color:#808080 !important">
+                                    <span ></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+
+
+
+                            </span>
+
+
+                      
+
+                            <ul class="navbar-nav ml-auto nav-flex-icons">
+                              
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false" style="color:white !important; background-color:transparent !important">
+                                        <span class="mdi mdi-account-circle"></span> &nbsp;  Hello <span id="theUserName"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                                         aria-labelledby="navbarDropdownMenuLink-333">
+                                        <a class="dropdown-item" href="#">My Account</a>
+                                        <a class="dropdown-item"  data-bind="dxAction:'#login'"  href="#">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- C
+                                
+                                ollapsible content -->
+
+                        </nav>
+                        <!--/.Navbar-->
+                    </div>
+                </div>
+            </div>
+
+
+         
+
+
+            <div style="padding: 1em 1em;">
+
+
+
+
+
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+
+                        
+                        <li id="firstBread" style="cursor:pointer" data-bind="" class="breadcrumb-item"><span class="text-grey mt-2" style="text-transform:uppercase; font-size:90%" id="prevviewName"></span></li>
+                        <li style="cursor:pointer" class="breadcrumb-item active" aria-current="page"><span class="text-grey mt-2" style="text-transform:uppercase; font-size:90%" id="viewName"></span></li>
+                    </ol>
+                </nav>
+
+            </div>
+
+            <div class="uk-animation-slide-left uk-animation-slide-right " style="width:94%; padding:1em; margin:1em;margin-top: -2.5em;" id="contentPlaceholder" data-options="dxContentPlaceholder : { name: 'content'  }">
+
+
+
+
+            </div>
+
+
+
+
+          </div>
+    </div>
+   <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
+</div>
+
+
+<div class="custom-layout" data-options="dxLayout : { name: 'custom', platform: 'win', phone: false } " >
+    <div class="content layout-content" data-options="dxContentPlaceholder : { name: 'content', contentCssPosition: 'static' }"></div>
+</div>

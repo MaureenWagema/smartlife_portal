@@ -1,0 +1,22 @@
+<div data-options="dxView : { name: 'AgentAllSale', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div data-bind="dxScrollView: { height:'85vh', bounceEnabled: false }">
+
+
+            <div class="container">
+                <div id="agentsallsale"></div>
+
+
+                <div style="min-height:5em"></div>
+                <div id="gridagentsallsale"></div>
+                <div style="min-height:5em"></div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>

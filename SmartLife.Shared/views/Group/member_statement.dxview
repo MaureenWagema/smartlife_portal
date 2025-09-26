@@ -1,0 +1,43 @@
+<div data-options="dxView : { name: 'member_statement', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: true }"></div>
+
+            <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+            <div align="center" class="dx-fieldset-header">STATEMENT</div>
+            <div id="gridContainer" data-bind="dxDataGrid: {
+             dataSource: statements_Store,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columnHidingEnabled: true,
+             columns: statements_columns ,
+             height: '100%', width: '100%',
+             scrolling:{mode:'virtual'},
+             paging: {enabled: false},
+             searchPanel: { visible: false, width: 350 },
+             headerFilter: { visible: false },
+                                filterRow: {
+                                    visible: false,
+                                    applyFilter: 'auto',
+                                },
+             }">
+                <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                    <div class="img-container">
+                        <img data-bind="attr:{src: $data.value}" />
+                    </div>
+                </div>
+            </div>
+
+            <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+
+        </div>
+    </div>

@@ -1,0 +1,9 @@
+<div data-options="dxView : { name: 'premium_statement', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div style="width:100%;height:100%" align="center">
+            <div style="height:100%;" id="pdf-container"></div>
+        </div>
+
+    </div>
+</div>

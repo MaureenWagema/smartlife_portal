@@ -1,0 +1,135 @@
+﻿.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+
+.dx-tabs {
+    border: 1px solid #fff !important;
+}
+
+.dx-tab {
+    padding: 9px;
+    background-color: #fff !important;
+}
+
+
+
+
+.dx-tab-selected .dx-icon {
+    color: #fff;
+}
+
+#proposal_form .dx-tabs-wrapper {
+    display: none !important;
+}
+
+
+.dx-tab.dx-tab-selected {
+       color: #fff !important;
+    background-color: #ff3e1d !important;
+    border-color: #ff3e1d;
+    box-shadow: 0 0.125rem 0.25rem 0 rgb(255 62 29 / 40%);
+
+    border-radius: 0em;
+
+}
+
+
+.dx-tabpanel{
+    border:none !important;
+   
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+
+.dx-tabs-nav-buttons .dx-tabs-scrollable .dx-tabs-wrapper {
+    border-left: 1px solid #fff !important;
+    border-right: 1px solid  #fff !important;
+}
+
+.dx-tabpanel .dx-multiview-wrapper {
+    border: 1px solid #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.active_link {
+
+    background-color:red !important;
+   color:#fff !important;
+
+
+   box-shadow: 0 2px 6px 0 rgb(67 89 113 / 12%);
+   border: 0 solid #d9dee3;
+    border-radius: 0.5rem;
+}
+
+
+
+#svg_form_time {
+  height: 15px;
+  max-width: 80%;
+  margin: 40px auto 20px;
+  display: block;
+}
+
+#svg_form_time circle,
+#svg_form_time rect {
+  fill: white;
+}
+
+.buttonPrimary {
+  background: rgb(43, 69, 244);
+  border-radius: 5px;
+  padding: 0.2rem 0.3rem;
+  display: inline-block;
+  margin: 10px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  min-width:98% !important;
+
+}
+
+.buttonSecondary {
+
+      background: rgb(237, 40, 70);
+  border-radius: 5px;
+ padding: 0.2rem 0.3rem;
+  display: inline-block;
+  margin: 10px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+   min-width:98% !important;
+ 
+
+}
+
+.disabled {
+  display:none;
+}
+
+section {
+  background:white;
+  background:rgba(255,255,255,0.9);
+  transition:transform 0.2s ease-in-out;
+}
+
+.dark-blue-label {
+    color: darkblue;
+}

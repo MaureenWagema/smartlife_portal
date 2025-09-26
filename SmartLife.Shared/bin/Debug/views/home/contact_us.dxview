@@ -1,0 +1,7 @@
+<div data-options="dxView : { name: 'contact_us', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div style="padding:2px" id="dxFormContactUs" data-bind="dxForm: dxFormContactUs"></div>
+
+    </div>
+</div>

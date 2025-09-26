@@ -1,0 +1,119 @@
+<div data-options="dxView : { name: 'signature_claims', title: '', disableCache: false } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'after' , widget: 'dxButton' , options: { icon: 'refresh' , text: '' , onClick: refresh_list, type:'normal' } }
+             ],visible: true }">
+        </div>
+
+        <div data-bind="dxPopup:{ fullScreen: true, visible:popup_sig, onHiding: hide_popup_sig,
+             toolbarItems: [{ text:'CLIENT SIGNATURE', location: 'center' }],
+        }">
+
+
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div id="signatureparent">
+                    <div id="signature" style="min-height:400px;"></div>
+                </div>
+                <br /><br />
+                <div class="centre" style="width:100%;" align="center">
+                    <span align="right" data-bind="dxButton: { type: 'default', text: 'CLOSE', icon: 'close', onClick: hide_popup_sig, width: 120 }"></span>
+                    <span data-bind="dxButton: { type: 'danger', text: 'SUBMIT', icon: 'check', onClick: submit_claim, width: 120 }"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+        <!--TODO - Create a data grid-->
+
+        <br />
+        <div id="gridpel" data-bind="dxDataGrid: {
+                                dataSource: claimsStore ,
+                                columns: claims_columns,
+                                groupExpandMode: 'buttonClick',
+                                columnHidingEnabled: true,
+                                wordWrapEnabled: true,
+                                allowColumnResizing: true,
+                                onRowClick: row_clicked,
+                                grouping: {
+	                                contextMenuEnabled: true
+                                },
+                                groupPanel: {
+	                                visible: false
+                                },
+                                export: {
+                                    allowExportSelectedData:true,
+                                    enabled: false,
+                                    texts: {
+                                        exportAll:'Export all data',
+                                        exportSelectedRows:'Export selected rows'
+
+                                    },
+                                },
+                                searchPanel: {
+                                    highlightCaseSensitive: false,
+                                    highlightSearchText: true,
+                                    placeholder: 'Search...',
+                                    searchVisibleColumnsOnly: true,
+                                    text: '',
+                                    visible: true,
+                                    width: 200
+                                },
+                                editing: {
+                                    allowUpdating: false,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+                                summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Total Activities={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Total={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'ClientName',
+                                            summaryType: 'count'
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'total',
+                                            summaryType: 'count',
+                                            showInGroupFooter: true,
+                                            showInColumn: 'ClientName',
+                                            displayFormat: '{0} Active Agents'
+                                        }
+                                    ]
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 10
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                                headerFilter: { visible: false },
+                                filterRow: {
+                                    visible: false,
+                                    applyFilter: 'auto',
+                                },
+                            }"></div>
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

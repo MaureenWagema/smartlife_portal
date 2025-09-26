@@ -1,0 +1,82 @@
+<div data-options="dxView : { name: 'claims', title: 'claims' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'center', 'text': 'OVERVIEW' },
+             { location: 'after' , widget: 'dxButton' , options: { icon: 'refresh' , text: '' , onClick: refresh_list, type:'normal' } }
+             ],visible: true }">
+        </div>
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <!--<div align="center"><img style="background: url(images/glico_home.png) no-repeat;" src="images/glico_home.png" /></div>-->
+        <br />
+
+        <!--date search-->
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+        <hr />
+        <br />
+        <!--Dashboard-->
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="card bg-primary text-white h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3">
+                                <div class="text-white-75">Received Claims</div>
+
+                                <span class="display-4 text-white"><strong data-bind="{ text:lblTotalClaimsReceived }"></strong></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar feather-xl text-white-50"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between small mt-n4">
+                        <span class="text-white stretched-link small">Total Claims Received from POS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="card bg-success text-white h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3">
+                                <div class="text-white-75">Processed Claims</div>
+                                <span class="display-4 text-white"><strong data-bind="{ text:lblTotalProcessedClaims }"></strong></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square feather-xl text-white-50"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between small mt-n4">
+                        <span class="text-white stretched-link small">Total Claims Processed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="card bg-warning text-white h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3">
+                                <div class="text-white-75 large">Paid Claims Amount</div>
+                                <span class="display-4 text-white"><strong data-bind="{ text:lblPaidClaimsAmount }"></strong></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign feather-xl text-white-50"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between small mt-n4">
+                        <span class="text-white stretched-link small">Total Amount of Claims Paid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 6000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

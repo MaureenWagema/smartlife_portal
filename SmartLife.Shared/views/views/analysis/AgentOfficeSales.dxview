@@ -1,0 +1,169 @@
+<div data-options="dxView : { name: 'AgentOfficeSales', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'center', 'text': 'OFFICE SALES' },
+             { location: 'after' , widget: 'dxButton' , options: { icon: 'refresh' , text: '' , onClick: refresh_list, type:'normal' } }
+             ],visible: true }">
+        </div>
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+        <div class="panel panel-info">
+
+            <!--Add the listview-->
+            <div class="panel-body">
+                <!--TODO create list view to display list of schools-->
+                <!--menuItems: menu_items,menuMode: 'slide', height: '90%'-->
+                <div style="padding-right:3px; padding-left:3px;">
+                    <div style="padding:3px">
+
+                        <!--Add form to display the search params-->
+                        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+
+                        <div>
+                            <div class="dx-fieldset-header" data-bind="{ text: complete_total}"></div>
+                        </div>
+
+                        <!--Life agents-->
+                        <div id="gridContainer" data-bind="dxDataGrid: {
+                             dataSource: life_analysis_store,
+                             wordWrapEnabled: true,
+                             showColumnHeaders:true,
+                             columns: life_analysis_columns,
+                             height: '100%', width: '100%',
+                             scrolling:{mode:'virtual'},
+                             paging: {enabled: false},
+                             searchPanel: { visible: true, width: 350 },
+                             grouping: {
+	                                contextMenuEnabled: true
+                                },
+                                groupPanel: {
+	                                visible: true
+                                },
+
+                             export: {
+                                    allowExportSelectedData:true,
+                                    enabled:true,
+                                    texts: {
+                                        exportAll:'Export all data',
+                                        exportSelectedRows:'Export selected rows'
+                                    },
+                                },
+                             sortByGroupSummaryInfo: [{
+                                  summaryItem: 'sum',
+                                  sortOrder: 'desc'
+                             }],
+                             summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Total Basic Pay={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Total={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'total',
+                                            summaryType: 'sum'
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'total_sold',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: true,
+                                            showInColumn: 'total_sold',
+                                            displayFormat: '{0} Sales'
+                                        }
+                                    ]
+                                },
+                             }">
+                            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                                <div class="img-container">
+                                    <img data-bind="attr:{src: $data.value}" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--Micro Agents-->
+                        <div id="gridContainer" data-bind="dxDataGrid: {
+                             dataSource: analysis_store,
+                             wordWrapEnabled: true,
+                             showColumnHeaders:true,
+                             columns: analysis_columns,
+                             height: '100%', width: '100%',
+                             scrolling:{mode:'virtual'},
+                             paging: {enabled: false},
+                             searchPanel: { visible: false, width: 350 },
+                             grouping: {
+	                                contextMenuEnabled: true
+                                },
+                                groupPanel: {
+	                                visible: true
+                                },
+
+                             export: {
+                                    allowExportSelectedData:true,
+                                    enabled:true,
+                                    texts: {
+                                        exportAll:'Export all data',
+                                        exportSelectedRows:'Export selected rows'
+                                    },
+                                },
+                             sortByGroupSummaryInfo: [{
+                                  summaryItem: 'sum',
+                                  sortOrder: 'desc'
+                             }],
+                             summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Total Basic Pay={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Total={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'total',
+                                            summaryType: 'sum'
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'total_sold',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: true,
+                                            showInColumn: 'total_sold',
+                                            displayFormat: '{0} Sales'
+                                        }
+                                    ]
+                                },
+                             }">
+                            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                                <div class="img-container">
+                                    <img data-bind="attr:{src: $data.value}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

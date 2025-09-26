@@ -1,0 +1,45 @@
+<div data-options="dxView : { name: 'policy_det', title: '' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <!--<div data-bind="dxToolbar: { dataSource: toolbarItems }"></div>-->
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: true }">
+        </div>
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+        <!--TODO handle policy details here where the details appear and you get to Buy-->
+        <!--put image here-->
+        <!--description here-->
+        <!--Buy Policy button here-->
+        <!--<iframe src="http://SOFTCLANSlife.com/products-and-services/individual-life-products/SOFTCLANS-endowment-education-plan-geep/" style="width:100%;height:100%"></iframe>-->
+        <!--<div style="background-image: url('images/gallery/esb.png');opacity:0.8; background-repeat: no-repeat;">-->
+        <br />
+        <div id="background_img">
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="esb"></div>
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="gfp"></div>
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="geep"></div>
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="gcip"></div>
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="lgp"></div>
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="saving"></div>
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="travel"></div>
+            <div style="background-color: #fff;color:#000; opacity: 1;" id="hci"></div>
+        </div>
+
+
+        <br />
+        <div style="width:100%" align="center" class="centre">
+            <div data-bind="dxButton: { text: 'FILL APPLICATION FORM', icon: 'edit', onClick: fill_form, type: 'default' }"></div>
+            <div data-bind="dxButton: { text: 'GET QUOTE', icon: 'doc', onClick: get_quote, type: 'default',visible:vs_client }"></div>
+            <div data-bind="dxButton: { text: 'WOULD YOU LIKE AN AGENT TO GET IN TOUCH WITH YOU?', icon: 'tel', onClick: send_email, type: 'default',visible:false }"></div>
+        </div>
+
+        <div data-bind="dxToast: {
+            message: 'Login is Required First',
+            type: 'error',
+            displayTime: 3000,
+            visible: isToastVisible
+        }">
+        </div>
+
+    </div>
+</div>

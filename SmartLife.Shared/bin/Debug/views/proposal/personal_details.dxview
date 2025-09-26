@@ -1,0 +1,27 @@
+<div data-options="dxView : { name: 'personal_details', title: 'personal_details' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: true }">
+        </div>
+
+        <!--pop up for disease details-->
+        <!--disease info-->
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_disease_desc, onHiding: hide_disease_desc,
+             toolbarItems: [{ text:'DISEASE DESCRIPTION', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormDisease" data-bind="dxForm: dxFormDisease"></div>
+            </div>
+        </div>
+
+
+        <!--Design a form to capture complete complete personal details-->
+        <div style="padding:2px" id="dxForm" data-bind="dxForm: dxFormOptions"></div>
+
+
+    </div>
+</div>

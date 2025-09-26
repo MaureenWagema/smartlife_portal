@@ -1,0 +1,14 @@
+<div data-options="dxView : { name: 'embedded_form', title: '' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: true }">
+        </div>
+
+        <div style="padding:2px" id="dxFormPolicy" data-bind="dxForm: dxFormPolicyDetails"></div>
+
+    </div>
+</div>

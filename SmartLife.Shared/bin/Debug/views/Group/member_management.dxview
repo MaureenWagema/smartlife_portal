@@ -1,0 +1,35 @@
+<div data-options="dxView : { name: 'member_management', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <!--<div align="left" style="width:100%;padding:10px;">
+            <div data-bind="dxButton: { text: 'ADD MEMBER', icon: 'plus', onClick: add_member, type: 'default' }"></div>
+        </div>-->
+        <div align="center" class="dx-fieldset-header">MEMBERS</div>
+        <div id="gridContainer" data-bind="dxDataGrid: { 
+             dataSource: members_Store,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columnHidingEnabled: true,
+             columns: members_columns ,  
+             height: '100%', width: '100%', 
+             scrolling:{mode:'virtual'}, 
+             paging: {enabled: false}, 
+             searchPanel: { visible: true, width: 350 }}">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

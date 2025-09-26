@@ -1,0 +1,100 @@
+<div data-options="dxView : { name: 'claim_enquiries', title: '' } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        
+
+        <div align="center" class="dx-fieldset-header">Claims Enquiries</div>
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+        <br />
+        <div id="gridpel" data-bind="dxDataGrid: {
+                                dataSource: claim_Store ,
+                                columns: claim_columns,
+                                columnHidingEnabled: true,
+                                wordWrapEnabled: true,
+                                onRowPrepared: onrowPrepared,
+                                grouping: {
+	                                contextMenuEnabled: true,
+                                    autoExpandAll: false
+                                },
+                                groupPanel: {
+	                                visible: true
+                                },
+                                export: {
+                                    allowExportSelectedData:true,
+                                    enabled:true,
+                                    texts: {
+                                        exportAll:'Export all data',
+                                        exportSelectedRows:'Export selected rows'
+
+                                    },
+                                },
+                                searchPanel: {
+                                    highlightCaseSensitive: false,
+                                    highlightSearchText: true,
+                                    placeholder: 'Search...',
+                                    searchVisibleColumnsOnly: true,
+                                    text: '',
+                                    visible: true,
+                                    width: 200
+                                },
+                                editing: {
+                                    allowUpdating: true,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+                                summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Total Claims={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Total={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'policy_no',
+                                            summaryType: 'count'
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'policy_no',
+                                            summaryType: 'count',
+                                            showInGroupFooter: true,
+                                            showInColumn: 'policy_no',
+                                            displayFormat: '{0} Claims'
+                                        }
+                                    ]
+                                },
+                                paging: {
+                                    enabled: false,
+                                    pageSize: 20
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                                headerFilter: { visible: false },
+                                filterRow: {
+                                    visible: false,
+                                    applyFilter: 'auto',
+                                },
+                            }"></div>
+        
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

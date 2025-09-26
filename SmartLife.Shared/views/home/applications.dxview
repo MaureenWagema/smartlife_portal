@@ -1,0 +1,149 @@
+<div data-options="dxView : { name: 'applications', title: '', disableCache: false } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_reccur_momo, onHiding: hide_recur_momo,
+             toolbarItems: [{ text:'REGISTER RECURRING MOMO BILLING', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormRecur" data-bind="dxForm: dxFormRecur"></div>
+            </div>
+        </div>
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'edit' , text: 'Capture New Proposal' , onClick: new_proposal, type:'danger' } },
+             { location: 'center', 'text': 'SUBMITTED CASES' },
+             { location: 'after' , widget: 'dxButton' , options: { icon: 'refresh' , text: '' , onClick: refresh_list, type:'normal' } }
+             ],visible: true }">
+        </div>
+
+        <hr />
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+        <hr />
+
+        <br />
+        <div>
+            <div class="panel panel-info">
+                <!--<div class="panel-heading">
+                <div style="height:40px" class="panel-title">
+                    <span><strong style="margin-top:10px; font-size:large;float:left;">Proposals</strong></span>
+                    <span style="float:right" data-bind="dxButton: { text: '', icon: 'refresh', onClick: refresh_list, type:'normal' }"></span>
+                </div>
+            </div>-->
+                <!--Add the listview-->
+                <div class="panel-body">
+                    <!--TODO create list view to display list of schools-->
+                    <!--menuItems: menu_items,menuMode: 'slide', height: '90%'-->
+                    <div style="padding-right:3px; padding-left:3px;">
+                        <div style="padding:3px">
+
+                            <div id="gridpel" data-bind="dxDataGrid: {
+                                dataSource:applications_store ,
+                                columnHidingEnabled: true,
+                                columns: applications_columns,
+                                wordWrapEnabled: true,
+                                allowColumnResizing: true,
+                                columnResizingMode: 'nextColumn',
+                                columnMinWidth: 80,
+                                columnAutoWidth: true,
+                                onRowPrepared: onrowPrepared,
+                                grouping: {
+	                                contextMenuEnabled: bool_grouping,
+                                    autoExpandAll: false
+                                },
+                                groupPanel: {
+	                                visible: false
+                                },
+                                searchPanel: {
+                                    highlightCaseSensitive: false,
+                                    highlightSearchText: true,
+                                    placeholder: 'Search...',
+                                    searchVisibleColumnsOnly: true,
+                                    text: '',
+                                    visible: true,
+                                    width: 200
+                                },
+                                editing: {
+                                    allowUpdating: false,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+                                summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Submissions={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Premium = {0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'proposal_no',
+                                            summaryType: 'count',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            }
+                                        },
+                                        {
+                                            column: 'TotalPremium',
+                                            summaryType: 'sum',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        }
+                                    ],
+                                    groupItems: [
+                                        {
+                                            column: 'proposal_no',
+                                            summaryType: 'count',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'name',
+                                            displayFormat: ' {0} Submission',
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        },
+                                        {
+                                            column: 'TotalPremium',
+                                            summaryType: 'sum',
+                                            showInGroupFooter: false,
+                                            showInColumn: 'TotalPremium',
+                                            displayFormat: ' {0}', 
+                                            alignByColumn: true,
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                        }
+                                    ]
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 20
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                                headerFilter: { visible: true },
+                                filterRow: {
+                                    visible: true,
+                                    applyFilter: 'auto',
+                                },
+                            }"></div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div data-options="dxView : { name: 'micro_collections', title: '' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <!--Search Panel-->
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+        <br />
+
+        <!--Grid to display the payments...-->
+        <br />
+        <div id="gridpel" data-bind="dxDataGrid: {
+                                dataSource: PremiumStore,
+                                columns: PremiumColumns,
+                                columnHidingEnabled: true,
+                                wordWrapEnabled: true,
+                                grouping: {
+	                                contextMenuEnabled: true,
+                                    autoExpandAll: false
+                                },
+                                groupPanel: {
+	                                visible: false
+                                },
+                                export: {
+                                    allowExportSelectedData:true,
+                                    enabled:true,
+                                    texts: {
+                                        exportAll:'Export all data',
+                                        exportSelectedRows:'Export selected rows'
+                                    },
+                                },
+                                searchPanel: {
+                                    highlightCaseSensitive: false,
+                                    highlightSearchText: true,
+                                    placeholder: 'Search...',
+                                    searchVisibleColumnsOnly: true,
+                                    text: '',
+                                    visible: true,
+                                    width: 200
+                                },
+                                editing: {
+                                    allowUpdating: true,
+                                    mode: 'cell',
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                },
+                                summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: '{0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: '{0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'Received',
+                                            valueFormat:{
+                                                format: formatSummary,
+                                            },
+                                            summaryType: 'sum'
+                                        }
+                                    ],
+
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 20
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                                headerFilter: { visible: false },
+                                filterRow: {
+                                    visible: false,
+                                    applyFilter: 'auto',
+                                },
+                            }"></div>
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

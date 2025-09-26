@@ -1,0 +1,87 @@
+<div data-options="dxView : { name: 'AgentAccount', title: '', disableCache: true } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_recruit_link, onHiding: hide_recruit_link,
+             toolbarItems: [{ text:'SEND RECRUITMENT LINK', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormRecruitLink" data-bind="dxForm: dxFormRecruitLink"></div>
+            </div>
+        </div>
+
+        <div style="padding:2px" id="dxFormAccount" data-bind="dxForm: dxFormAccount"></div>
+
+        <!--Clawback Details..-->
+        <div align="left" class="dx-fieldset-header" data-bind="{ text: 'ClawBack Details', visible: true }"></div>
+        <div id="gridContainer" data-bind="dxDataGrid: {
+                             dataSource: clawback_store,
+                             wordWrapEnabled: true,
+                             columnHidingEnabled: true,
+                             showColumnHeaders:true,
+                             columns: clawback_columns,
+                             height: '100%', width: '100%',
+                             scrolling:{mode:'standard'},
+                             onRowPrepared: onrowPrepared,
+                             searchPanel: { visible: true, width: 200 },
+                             grouping: {
+	                                contextMenuEnabled: false
+                                },
+                                groupPanel: {
+	                                visible: false
+                                },
+
+                             export: {
+                                    allowExportSelectedData:true,
+                                    enabled:true,
+                                    texts: {
+                                        exportAll:'Export all data',
+                                        exportSelectedRows:'Export selected rows'
+
+                                    },
+                                },
+                             summary: {
+                                    texts: {
+                                        avg: 'Avg={0}',
+                                        avgOtherColumn: 'Avg of {1} is {0}',
+                                        count: 'Total Basic Pay={0}',
+                                        max: 'Max={0}',
+                                        maxOtherColumn: 'Max of {1} is {0}',
+                                        min: 'Min={0}',
+                                        minOtherColumn: 'Min of {1} is {0}',
+                                        sum: 'Total={0}',
+                                        sumOtherColumn: 'Sum of {1} is {0}'
+                                    },
+                                    totalItems: [
+                                        {
+                                            column: 'comm_payable',
+                                            summaryType: 'sum',
+                                            valueFormat: 'decimal'
+                                        },
+                                    ]
+                                },
+                                paging: {
+                                    enabled: true,
+                                    pageSize: 5
+                                },
+                                pager: {
+                                    showPageSizeSelector: true,
+                                    showInfo: true
+                                },
+                             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

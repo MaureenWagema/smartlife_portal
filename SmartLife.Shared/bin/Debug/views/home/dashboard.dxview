@@ -1,0 +1,7 @@
+<div data-options="dxView : { name: 'dashboard', title: 'dashboard' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        
+
+
+    </div>
+</div>

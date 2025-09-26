@@ -1,0 +1,242 @@
+<div data-options="dxView : { name: 'get_quotation', title: 'get_quotation' } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <!--<div id="toolbar" data-bind="dxToolbar: { dataSource: toolbarItems, visible: vs_dxtoolbar }"></div>-->
+        <!--<div data-bind="dxScrollView: { height: get_dxtile_height }">-->
+ 
+
+
+        <h4 class="mb-0 mt-2 text-primary">EXPLORE OUR LIFE PRODUCTS</h4>
+        <hr class="mt-2 mb-4">
+        <!--<div align="center" style="width:92%;margin: auto;">
+            <div align="center" style="margin: auto;" data-bind="dxTileView: {
+             items: tileViewDataSource,
+             direction: 'vertical',
+             width: '91%',
+             baseItemHeight: tile_height,
+             baseItemWidth: tile_width,
+             itemMargin: 5,
+             itemTemplate: itemTemplate,
+             onItemClick: onItemClick
+        }"></div>
+        </div>-->
+        <!--<div class="row1" style="width:100%; height:85%;margin: 0 auto;margin-top:20px;">
+            <div class="col" id="dash_panel" align="center">
+                <div id="esb_prod" class="dash_panel_child_prod" style="background-image: url('images/icons/esb.png');" align="center">
+                    <div class="dash_panel_prod">SOFTCLANS END – OF – SERVICE BENEFITS (ESB)</div>
+                </div>
+                <div id="funeral_prod" class="dash_panel_child_prod" style="background-image: url('images/icons/funeral.png');" align="center">
+                    <div class="dash_panel_prod">SOFTCLANS FUNERAL POLICY (GFP)</div>
+                </div>
+            </div>
+            <div class="col" id="dash_panel" align="center">
+                <div id="edu_prod" class="dash_panel_child_prod" style="background-image: url('images/icons/education.png');" align="center">
+                    <div class="dash_panel_prod">SOFTCLANS ENDOWMENT EDUCATION PLAN (GEEP)</div>
+                </div>
+                <div id="illness_prod" class="dash_panel_child_prod" style="background-image: url('images/icons/critical_illness.png');" align="center">
+                    <div class="dash_panel_prod">SOFTCLANS CRITICAL ILLNESS PLAN (GCIP)</div>
+                </div>
+            </div>
+            <div class="col" id="dash_panel" align="center">
+                <div id="life_prod" class="dash_panel_child_prod" style="background-image: url('images/icons/life_guaranteed.png');" align="center">
+                    <div class="dash_panel_prod">SOFTCLANS LIFE GUARANTEED PLAN (LGP)</div>
+                </div>
+                <div id="savings_prod" class="dash_panel_child_prod" style="background-image: url('images/icons/savings.png');" align="center">
+                    <div class="dash_panel_prod">SOFTCLANS LIFE SAVINGS PLAN</div>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="section-title">
+            <!-- <h4>Policy Products</h4>-->
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <div class="card lift h-100">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <h5 class="text-danger">End of Service Benefit</h5>
+                                <div class="text-muted">
+
+                                    The ESB is essentially an additional pension plan an individual takes in addition to his or her statutory pensions.....
+
+                                    <div class="btn btn-danger text-white my-3 fw-500" data-bind="dxButton: { text: 'Read More....', icon: '', onClick: buy_esb,  }"></div>
+
+                                </div>
+                            </div>
+                            <img src="images/icons/old.png" alt="..." style="width: 10rem">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <div class="card lift h-100">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <h5 class="text-danger">GLICO FUNERAL POLICY (GFP)</h5>
+                                <div class="text-muted">
+
+                                    The minimum premium payable annually starts from GHC 50.00 depending on the category of insured....
+
+                                    <div class="btn btn-danger text-white my-3 fw-500" data-bind="dxButton: { text: 'Read More....', icon: '', onClick: buy_gfp,  }"></div>
+
+                                </div>
+                            </div>
+                            <img src="images/icons/funeral.png" alt="..." style="width: 10rem">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <div class="card lift h-100">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <h5 class="text-danger">GLICO ENDOWMENT EDUCATION PLAN (GEEP)</h5>
+                                <div class="text-muted">
+
+                                    GEEP primarily provides insurance protection for the premium-paying parent...
+
+                                    <div class="btn btn-danger text-white my-3 fw-500" data-bind="dxButton: { text: 'Read More....', icon: '', onClick: buy_geep,  }"></div>
+
+                                </div>
+                            </div>
+                            <img src="images/icons/education.png" alt="..." style="width: 10rem">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <div class="card lift h-100">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <h5 class="text-danger">GLICO CRITICAL ILLNESS PLAN (GCIP)</h5>
+                                <div class="text-muted">
+
+                                    (GCIP) is a health policy which pays out a lump sum to the policyholder if he/she is diagnosed by a medical specialist doctor from a registered hospital as having critical/dread diseases.....
+                                    <div class="btn btn-danger text-white my-3 fw-500" data-bind="dxButton: { text: 'Read More....', icon: '', onClick: buy_gcip,  }"></div>
+
+                                </div>
+                            </div>
+                            <img src="images/icons/sick.png" alt="..." style="width: 10rem">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <div class="card lift h-100">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <h5 class="text-danger">GLICO Family Life Comprehensive</h5>
+                                <div class="text-muted">
+
+                                    The Family Life Comprehensive Insurance Plan is a unique Policy that provides a guaranteed minimum lump sum for Policyholders and their families .....
+                                    <div class="btn btn-danger text-white my-3 fw-500" data-bind="dxButton: { text: 'Read More....', icon: '', onClick: buy_lgp,  }"></div>
+
+                                </div>
+                            </div>
+                            <img src="images/icons/savings.png" alt="..." style="width: 10rem">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <div class="card lift h-100">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <h5 class="text-danger">GLICO LIFE SAVINGS PLAN</h5>
+                                <div class="text-muted">
+
+                                    (GLSP) guarantees a lump sum payment at the end of a policy period of 10 years, whether the life insured survives to complete payment of the premiums or not.....
+                                    <div class="btn btn-danger text-white my-3 fw-500" data-bind="dxButton: { text: 'Read More....', icon: '', onClick: buy_glsp,  }"></div>
+
+                                </div>
+                            </div>
+                            <img src="images/icons/piggy.png" alt="..." style="width: 10rem">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <div class="card lift h-100">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <h5 class="text-danger">GLICO HOSPITAL CASH INCOME (HCI)</h5>
+                                <div class="text-muted">
+
+                                    (HCI)  This policy is a living benefit designed to cater for the income lost and the incidental cost incurred as a results of hospitalization of a family member.....
+                                    <div class="btn btn-danger text-white my-3 fw-500" data-bind="dxButton: { text: 'Read More....', icon: '', onClick: buy_hci,  }"></div>
+
+                                </div>
+                            </div>
+                            <img src="images/icons/sick.png" alt="..." style="width: 10rem">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+     
+
+
+        <!--Create the Quick links horizontally here-->
+        <!--<h3><strong>Quick Actions</strong></h3>-->
+        <!--<div align="center" style="width:100%;margin-top:10px;">
+            <div align="center" style="width:91%;margin: auto;">
+                <div style="float:left;width:49%;text-align:center;">
+                    <div class="col" style="margin-bottom:5px;width:150px;" align="center" data-bind="dxButton: { text: 'SIGN IN', icon:'user', onClick: dologin, width:150, visible: vs_sign_in }"></div>
+                </div>
+                <div style="float:left;width:50%;text-align:center;">
+                    <div class="col" style="margin-bottom:5px;width:150px;" align="center" data-bind="dxButton: { text: 'SIGN UP', icon:'edit', onClick: dosignup, width:150, visible: vs_sign_up }"></div>
+                </div>
+            </div>
+        </div>-->
+        <!--</div>-->
+
+    </div>
+</div>

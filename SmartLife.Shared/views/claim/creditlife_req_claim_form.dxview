@@ -1,0 +1,8 @@
+<div data-options="dxView : { name: 'creditlife_req_claim_form', title: '' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        
+        <!--Design the claim forms for CreditLife-->
+
+
+    </div>
+</div>

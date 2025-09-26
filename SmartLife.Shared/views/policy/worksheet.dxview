@@ -1,0 +1,192 @@
+<div data-options="dxView : { name: 'worksheet', title: '', disableCache: false } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } },
+             { location: 'after', locateInMenu:'always' , widget: 'dxButton' , options: { icon: 'doc' , text: 'Request New Claim' , onClick: add_claim, type:'normal', visible: vs_is_policy } },
+             { location: 'after', locateInMenu:'always' , widget: 'dxButton' , options: { icon: 'doc' , text: 'Request New Endorsement' , onClick: add_endorsement, type:'normal', visible: vs_is_policy } },
+             { location: 'after', locateInMenu:'always' , widget: 'dxButton' , options: { icon: 'doc' , text: 'REFUND - SUSPENSE ACCOUNT(PROPOSAL)' , onClick: add_suspense_proposal, type:'normal', visible: vs_is_proposal } }
+             ],visible: true }">
+        </div>
+
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+        <br />
+
+        <div style="padding:2px" id="formPolicyOptions" data-bind="dxForm: formPolicyOptions"></div>
+
+        <div style="width:100%;height:100%" align="center">
+            <div style="height:100%;" id="pdf-container"></div>
+        </div>
+
+        <br /><br />
+        <div align="center" class="dx-fieldset-header" data-bind="{ text: 'Proposal Deposit', visible: vs_is_proposal }"></div>
+        <div style="width:100%;" id="gridContainer" data-bind="dxDataGrid: {
+             visible: vs_is_proposal,
+             dataSource: PropDepStore,
+             columnHidingEnabled: true,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: PropDep_columns,
+             height: '100%',
+             width: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: false, width: 250 }
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div align="center" class="dx-fieldset-header" data-bind="{ text: 'Client Suspense Account', visible: vs_is_policy }"></div>
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             visible: vs_is_policy,
+             dataSource: ClientAccountStore,
+             columnHidingEnabled: true,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: ClientAccount_columns,
+             allowColumnResizing: true,
+             height: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: false, width: 250 }
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div align="center" class="dx-fieldset-header" data-bind="{ text: 'History of Claims / Loans', visible: vs_is_policy }"></div>
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             visible: vs_is_policy,
+             dataSource: claimHistory_Store,
+             columnHidingEnabled: true,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: claimHistory_columns,
+             height: '100%',
+             width: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: false, width: 250 },
+             grouping: {
+	            contextMenuEnabled: true,
+                autoExpandAll: false
+             },
+             groupPanel: {
+	            visible: true
+             },
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div align="center" class="dx-fieldset-header" data-bind="{ text: 'History of Endorsements', visible: vs_is_policy }"></div>
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             visible: vs_is_policy,
+             dataSource: endorsementHistory_Store,
+             columnHidingEnabled: true,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: endorsementHistory_columns,
+             height: '100%',
+             width: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: false, width: 250 },
+             grouping: {
+	            contextMenuEnabled: true,
+                autoExpandAll: false
+             },
+             groupPanel: {
+	            visible: true
+             },
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <br />
+        <div align="center" class="dx-fieldset-header" data-bind="{ text: 'Applied Claims / Loans Requests', visible: true }"></div>
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             visible: true,
+             dataSource: claim_Store,
+             columnHidingEnabled: true,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: claim_columns,
+             height: '100%',
+             width: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: false, width: 250 },
+             onRowClick: claimClick,
+             grouping: {
+	            contextMenuEnabled: true,
+                autoExpandAll: false
+             },
+             groupPanel: {
+	            visible: true
+             },
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div align="center" class="dx-fieldset-header" data-bind="{ text: 'Applied Endorsements Requests', visible: vs_is_policy }"></div>
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             visible: vs_is_policy,
+             dataSource: endorsement_Store,
+             columnHidingEnabled: true,
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: endorsement_columns ,
+             height: '100%',
+             width: '100%',
+             scrolling:{mode:'standard'},
+             paging: {enabled: false},
+             searchPanel: { visible: false, width: 250 },
+             onRowClick: endorsementClick,
+             grouping: {
+	            contextMenuEnabled: true,
+                autoExpandAll: false
+             },
+             groupPanel: {
+	            visible: true
+             },
+             }">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 6000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

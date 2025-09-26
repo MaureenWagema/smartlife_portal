@@ -1,0 +1,92 @@
+<div data-options="dxView : { name: 'proposal_form', title: 'POLICY FORM', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: vs_toolbar }">
+        </div>
+
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_dependants, onHiding: hide_dependants,
+             toolbarItems: [{ text:'ADD DEPENDANT', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormDependant" data-bind="dxForm: dxFormDependant"></div>
+            </div>
+        </div>
+
+        <!--Riders pop up-->
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_riders, onHiding: hide_riders,
+             toolbarItems: [{ text:'ADD RIDER', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormRider" data-bind="dxForm: dxFormRider"></div>
+            </div>
+        </div>
+
+        <!--pop up for disease details-->
+        <!--disease info-->
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_disease_desc, onHiding: hide_disease_desc,
+             toolbarItems: [{ text:'DISEASE DESCRIPTION', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormDisease" data-bind="dxForm: dxFormDisease"></div>
+            </div>
+        </div>
+
+
+
+        <!--Design a form to capture complete complete personal details-->
+        <!--<div class="container" style="padding:2em;">
+        <div class="tabs-container uk-card uk-card-default" style="pointer-events: none !important;  "></div>
+        <div id="proposal_form">
+            <div style="padding:2px" id="dxForm" data-bind="dxForm: dxFormOptions"></div>
+        </div>
+
+    </div>-->
+
+
+        <div id="svg_wrap"></div>
+
+        <section>
+
+            <h4 class="mb-0 mt-2 text-primary">PERSONAL DETAILS</h4>
+            <hr class="mt-2 mb-4">
+            <div style="padding:2px" id="dxFormPersonal" data-bind="dxForm: dxFormPersonalDetails"></div>
+
+        </section>
+
+        <section>
+
+
+            <h4 class="mb-0 mt-2 text-primary">POLICY DETAILS</h4>
+            <hr class="mt-2 mb-4">
+
+            <div style="padding:2px" id="dxFormPolicy" data-bind="dxForm: dxFormPolicyDetails"></div>
+
+        </section>
+
+
+        <section>
+            <h4 class="mb-0 mt-2 text-primary">HEALTH DETAILS</h4>
+            <hr class="mt-2 mb-4">
+            <div style="padding:2px" id="dxFormhealth" data-bind="dxForm: dxFormHealthDetails"></div>
+        </section>
+
+        <section>
+            <h4 class="mb-0 mt-2 text-primary">SUBMIT</h4>
+            <hr class="mt-2 mb-4">
+            <div style="padding:2px" id="dxFormSubmit" data-bind="dxForm: dxFormSubmitDetails"></div>
+
+        </section>
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 6000,
+                    visible: isToastVisible
+                }"></div>
+    </div>
+</div>

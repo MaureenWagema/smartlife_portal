@@ -1,0 +1,66 @@
+<div data-options="dxView : { name: 'group_claims', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <!--<div data-bind="dxCommand: { title: 'Back', id: 'back', type: 'back', visible: backButtonVisible, onExecute: backButtonAction  }"></div>-->
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div align="left" style="width:100%;padding:10px;">
+            <div data-bind="dxButton: { text: 'REQUEST NEW CLAIM', icon: 'plus', onClick: add_claim, type: 'default',visible:vs_add_claim }"></div>
+        </div>
+        <div align="center" class="dx-fieldset-header">Applied Claims</div>
+        <div id="gridContainer" data-bind="dxDataGrid: {
+             dataSource: claim_Store,
+             columnHidingEnabled: true,
+             headerFilter: { visible: true },
+             filterRow: {
+                visible: true,
+                applyFilter: 'auto',
+             },
+             wordWrapEnabled: true,
+             showColumnHeaders:true,
+             columns: claim_columns,
+             height: '100%', width: '100%',
+             scrolling:{mode:'virtual'},
+             paging: {enabled: false},
+             searchPanel: { visible: true, width: 250 }}">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+        <!--<div style="margin-top:0px;" data-bind="dxList: {
+            dataSource: claim_Store,
+            height: '80%',
+            onItemClick: claim_click
+        }">
+        <div data-options="dxTemplate:{ name:'item' }">
+            <div class="uk-card uk-card-default uk-width-1-1@m">
+                <div class="uk-card-header">
+                    <div class="uk-grid uk-flex-middle" uk-grid>
+                        <div style="display:inline-block; margin: 1px; width:100%">
+                            <p><b data-bind="text: reason, visible: false"></b></p>
+                            <p><b>Policy No: </b><b data-bind="text: policy_no"></b></p>
+                            <p><b>Claim Type: </b><b data-bind="text: claim_type"></b></p>
+                            <p><b>Total Cash Value: </b><b data-bind="text: tot_proceeds"></b></p>
+                            <p><b>Amount Available: </b><b data-bind="text: net_pay"></b></p>
+                            <p><b>Requested Amount: </b><b data-bind="text: amount_applied"></b></p>
+                            <p style="float:right; font-size:smaller; color:#808080; top:-3px;"><span data-bind="text: notification_date"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 3000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

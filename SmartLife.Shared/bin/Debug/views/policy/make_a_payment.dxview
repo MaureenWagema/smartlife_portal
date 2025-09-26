@@ -1,0 +1,109 @@
+<div data-options="dxView : { name: 'make_a_payment', title: 'make_a_payment' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <!--<div data-bind="dxCommand: { title: 'Back', id: 'back', type: 'back', visible: backButtonVisible, onExecute: backButtonAction  }"></div>-->
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <!--Popup for Payment options-->
+        <!--<div data-bind="dxPopup:{ fullScreen: false, visible:pop_options, height: 200, width: 200,closeOnOutsideClick: true }">
+
+        <div data-options="dxTemplate:{ name: 'content'}">
+            <div id="gridqn" data-bind="dxDataGrid: {
+                     dataSource:options_store ,
+                     columns: options_columns,
+                     wordWrapEnabled: true,
+                     onRowClick: options_click,
+                     showColumnHeaders: false
+            }"></div>
+        </div>
+
+    </div>-->
+        <!---->
+        <!--<h3 align="center">Swipe left to perform action</h3>-->
+
+        <div data-bind="dxPopup: {
+            title: 'Policy Details',
+            visible: policyDetailsVisible,
+            fullScreen: false,
+            }">
+
+            <div style="padding:4px;"><strong>Policy Number:</strong><br /> <span data-bind="text: polNumber"></span><br /></div>
+            <div style="padding:4px;"><strong>Description:</strong><br /> <span data-bind="text: polDesc"></span><br /></div>
+            <!--<div style="padding:4px;"><strong>Policy Fee:</strong><br /> <span data-bind="text: polfee"></span><br /></div>-->
+            <div style="padding:4px;"><strong>Modal Premium:</strong><br /> <span data-bind="text: polModal"></span><br /></div>
+            <div style="padding:4px;"><strong>Sum Assurred:</strong><br /> <span data-bind="text: polSA"></span><br /></div>
+
+            <div style="padding:4px;"><strong>Total Expected Premium:</strong><br /> <span data-bind="text: effective_prem"></span><br /></div>
+            <div style="padding:4px;"><strong>Current Premium:</strong><br /> <span data-bind="text: received"></span><br /></div>
+            <div style="padding:4px;"><strong>Missing Premium:</strong><br /> <span data-bind="text: missing_prem"></span><br /></div>
+
+            <!--<div style="padding:4px;"><strong>Last Withdraw Date:</strong><br /> <span data-bind="text: last_date"></span><br /></div>-->
+            <div style="padding:4px;"><strong>Premium Units:</strong><br /> <span data-bind="text: prem_units"></span><br /></div>
+
+            <div class="centre">
+                <div style="margin:25px;border: 1px solid" data-bind="dxButton: { text: 'OK', icon: 'check', onClick: hidePolicyDetalis }"></div>
+            </div>
+        </div>
+
+
+
+        <div data-bind="dxPopup: { title: 'Filter', showTitle: true, visible: PopupRange }">
+            <div class="row">
+                <div class="dx-fieldset">
+                    <div class="dx-field">
+                        <div class="dx-field-label">Select All</div>
+                        <div class="dx-field-value" data-bind="dxSwitch: { value: dateFilterDisable }"></div>
+                    </div>
+                </div>
+
+                <div data-bind="dxDateBox: {disabled: dateFilterDisable}"></div>
+                <div data-bind="dxDateBox: {disabled: dateFilterDisable}"></div>
+                <div data-bind="dxButton: { text: 'Cancel', onClick: CancelStatement }"></div>
+                <div data-bind="dxButton: { text: 'Ok', onClick: showStatement }"></div>
+            </div>
+        </div>
+
+        <div class="dx-fieldset-header" align="center" data-bind="{ text: 'MAKE PREMIUM PAYMENT' }"></div>
+
+        <div id="gridContainer" data-bind="dxDataGrid: { dataSource: policy_store,wordWrapEnabled: true,showColumnHeaders:true, columns: policy_columns ,  height: '100%', width: '100%', scrolling:{mode:'standard'}, paging: {enabled: false}, searchPanel: { visible: false, width: 350 }}">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--<div style="padding: 2px;" data-bind="dxList: {
+            dataSource: policy_store,
+            menuItems: menu_items,
+            menuMode: 'context',
+            height: '90%'
+        }">
+        <div data-options="dxTemplate:{ name:'item' }">
+            <div class="uk-card uk-card-default uk-width-1-1@m">
+                <div class="uk-card-header">
+                    <div class="uk-grid uk-flex-middle" uk-grid>
+                        <div style="display:inline-block; margin: 1px;">
+                            <p><i data-bind="text: basic_prem, visible:false"></i></p>
+                            <p><i data-bind="text: modal_prem, visible:false"></i></p>
+                            <p><i data-bind="text: description, visible:false"></i></p>
+                            <p><i data-bind="text: plan, visible:false"></i></p>
+                            <p><i data-bind="text: policy_fee, visible:false"></i></p>
+                            <p><i data-bind="text: agent_no, visible:false"></i></p>
+                            <p>Policy No: <b data-bind="text: policy_no"></b></p>
+                            <p>Sum Assured: <b data-bind="text: sa"></b></p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>-->
+
+    </div>
+</div>

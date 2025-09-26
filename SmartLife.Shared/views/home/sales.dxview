@@ -1,0 +1,103 @@
+<div data-options="dxView : { name: 'sales', title: '', disableCache: false } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'center', visible: false, 'text': 'OVERVIEW' },
+             { location: 'after' , widget: 'dxButton' , options: { icon: 'refresh' , text: 'REFRESH' , onClick: refresh_list, type:'normal' } }
+             ],visible: false }">
+        </div>
+
+        <div data-bind="dxLoadPanel: { message: 'Loading data...', visible: LoadPanelShown }"></div>
+
+        <!--Dashboard-->
+
+
+        <div style="padding:2px" id="dxFormSearch" data-bind="dxForm: dxFormSearchDetails"></div>
+        <hr />
+        <br />
+
+        <div class="dx-fieldset-header" data-bind="{ text: 'INDIVIDUAL LIFE', visible: true }"></div>
+        <div class="row">
+            <div id="SubmittedCases" class="col-lg-12 col-xl-6 mb-4">
+                <div class="card bg-warning text-white h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3">
+                                <div class="text-white-75 large">Submitted Cases</div>
+                                <span class="display-4 text-white"><strong data-bind="{ text:ILSubmittedCases }"></strong></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign feather-xl text-white-50"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between small mt-n4">
+                        <span class="text-white stretched-link small">All field agents submissions</span>
+                    </div>
+                </div>
+            </div>
+            <div id="InceptedCases" class="col-lg-12 col-xl-6 mb-4">
+                <div class="card bg-success text-white h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3">
+                                <div class="text-white-75">Incepted Cases</div>
+                                <span class="display-4 text-white"><strong data-bind="{ text:ILInceptedCases }"></strong></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square feather-xl text-white-50"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between small mt-n4">
+                        <span class="text-white stretched-link small">All Incepted Cases</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <br />
+        <!--<div class="dx-fieldset-header" data-bind="{ text: 'MICRO INSURANCE', visible: true }"></div>
+        <div class="row">
+            <div id="MicroSubmittedCases" class="col-lg-12 col-xl-6 mb-4">
+                <div class="card bg-warning text-white h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3">
+                                <div class="text-white-75 large">Submitted Cases</div>
+                                <span class="display-4 text-white"><strong data-bind="{ text:MicroSubmittedCases }"></strong></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign feather-xl text-white-50"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between small mt-n4">
+                        <span class="text-white stretched-link small">All field agents submissions</span>
+                    </div>
+                </div>
+            </div>
+            <div id="MicroInceptedCases" class="col-lg-12 col-xl-6 mb-4">
+                <div class="card bg-success text-white h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3">
+                                <div class="text-white-75">Incepted Cases</div>
+                                <span class="display-4 text-white"><strong data-bind="{ text:MicroInceptedCases }"></strong></span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square feather-xl text-white-50"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between small mt-n4">
+                        <span class="text-white stretched-link small">All Incepted Cases</span>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 6000,
+                    visible: isToastVisible
+              }">
+        </div>
+
+    </div>
+</div>

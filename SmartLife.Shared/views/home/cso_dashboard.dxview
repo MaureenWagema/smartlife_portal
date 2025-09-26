@@ -1,0 +1,8 @@
+<div data-options="dxView : { name: 'cso_dashboard', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        
+        <!--View Submitted Cases & Incepted Cases-->
+
+
+    </div>
+</div>

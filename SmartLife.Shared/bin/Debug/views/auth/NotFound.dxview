@@ -1,0 +1,6 @@
+<div data-options="dxView : { name: 'NotFound', title: 'NotFound' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        
+        <p style="padding: 5px">Page not Found</p>
+    </div>
+</div>

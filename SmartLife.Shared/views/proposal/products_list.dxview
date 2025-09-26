@@ -1,0 +1,37 @@
+<div data-options="dxView : { name: 'products_list', title: '', disableCache: true } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+
+        <div id="loadpanel" data-bind="dxLoadPanel: { message: 'Loading...', visible: LoadPanelShown }"></div>
+
+        <div id="toolbar_des" data-bind="dxToolbar: { dataSource: [
+             { location: 'before' , widget: 'dxButton' , options: { icon: 'back' , text: '' , onClick: go_back, type:'normal' } }
+             ],visible: true }">
+        </div>
+
+        <div data-bind="dxPopup:{ fullScreen: false, visible:pop_send_link, onHiding: hide_send_link,
+             toolbarItems: [{ text:'SEND APPLICATION FORM LINK', location: 'center' }],
+        }">
+            <div data-options="dxTemplate:{ name: 'content'}">
+                <div style="padding:2px" id="dxFormSendLink" data-bind="dxForm: dxFormSendLink"></div>
+            </div>
+        </div>
+
+        <div align="center" class="dx-fieldset-header">SELECT PRODUCT</div>
+        <div id="gridContainer" data-bind="dxDataGrid: { dataSource: products_Store,wordWrapEnabled: true,showColumnHeaders:true, columns: products_columns ,  height: '100%', width: '100%', scrolling:{mode:'standard'}, paging: {enabled: false}, searchPanel: { visible: false, width: 350 }}">
+            <div data-options="dxTemplate:{ name:'cellTemplate' }">
+                <div class="img-container">
+                    <img data-bind="attr:{src: $data.value}" />
+                </div>
+            </div>
+        </div>
+
+
+        <div data-bind="dxToast: {
+                    message: toast_msg,
+                    type: toast_type,
+                    displayTime: 6000,
+                    visible: isToastVisible
+                }"></div>
+
+    </div>
+</div>

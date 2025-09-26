@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ca9dafdf-21bc-4a34-8506-503b693f2985</ProjectGuid>
+    <AutoAssignPort>True</AutoAssignPort>
+    <RunInSimulator>True</RunInSimulator>
+    <UploadPluginsToTheCourier>True</UploadPluginsToTheCourier>
+    <Name>Shared</Name>
+    <ApplicationPage>index.html</ApplicationPage>
+    <RootNamespace>SmartLife</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="data\db.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\logo.png" />
+    <Content Include="js\dx.all.js" />
+    <Content Include="js\dx.all.debug.js" />
+    <Content Include="js\localization\dx.messages.de.js" />
+    <Content Include="js\localization\dx.messages.en.js" />
+    <Content Include="js\localization\dx.messages.ja.js" />
+    <Content Include="js\localization\dx.messages.ru.js" />
+    <Content Include="js\cldr.min.js" />
+    <Content Include="js\cldr\event.min.js" />
+    <Content Include="js\cldr\supplemental.min.js" />
+    <Content Include="js\cldr\unresolved.min.js" />
+    <Content Include="js\globalize.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\globalize\message.min.js" />
+    <Content Include="js\globalize\number.min.js" />
+    <Content Include="js\globalize\date.min.js" />
+    <Content Include="js\globalize\currency.min.js" />
+    <Content Include="js\knockout-latest.js" />
+    <Content Include="css\dx.spa.css" />
+    <Content Include="css\dx.common.css" />
+    <Content Include="css\dx.contrast.compact.css" />
+    <Content Include="css\dx.contrast.css" />
+    <Content Include="css\dx.dark.compact.css" />
+    <Content Include="css\dx.light.compact.css" />
+    <Content Include="css\dx.dark.css" />
+    <Content Include="css\dx.light.css" />
+    <Content Include="css\dx.android5.light.css" />
+    <Content Include="css\dx.ios7.default.css" />
+    <Content Include="css\dx.win8.black.css" />
+    <Content Include="css\dx.win8.white.css" />
+    <Content Include="css\dx.win10.black.css" />
+    <Content Include="css\dx.win10.white.css" />
+    <Content Include="css\dx.material.blue.light.css" />
+    <Content Include="css\dx.material.blue.dark.css" />
+    <Content Include="css\icons\dxicons.ttf" />
+    <Content Include="css\icons\dxicons.woff" />
+    <Content Include="css\icons\dxicons.woff2" />
+    <Content Include="css\icons\dxiconsios.ttf" />
+    <Content Include="css\icons\dxiconsios.woff" />
+    <Content Include="css\icons\dxiconsios.woff2" />
+    <Content Include="css\icons\dxiconsmaterial.ttf" />
+    <Content Include="css\icons\dxiconsmaterial.woff" />
+    <Content Include="css\icons\dxiconsmaterial.woff2" />
+    <Content Include="css\fonts\Roboto-300.ttf" />
+    <Content Include="css\fonts\Roboto-300.woff" />
+    <Content Include="css\fonts\Roboto-300.woff2" />
+    <Content Include="css\fonts\Roboto-400.ttf" />
+    <Content Include="css\fonts\Roboto-400.woff" />
+    <Content Include="css\fonts\Roboto-400.woff2" />
+    <Content Include="css\fonts\Roboto-500.ttf" />
+    <Content Include="css\fonts\Roboto-500.woff" />
+    <Content Include="css\fonts\Roboto-500.woff2" />
+    <Content Include="css\fonts\Roboto-700.ttf" />
+    <Content Include="css\fonts\Roboto-700.woff" />
+    <Content Include="css\fonts\Roboto-700.woff2" />
+    <Content Include="smartlife.shared.config.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\about.html" />
+    <Content Include="views\auth\agent_login.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\agent_login.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\bancassurance.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\bancassurance.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\brokers.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\brokers.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\confrim_password.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\confrim_password.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\creditLife.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\creditLife.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\forgot_password.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\forgot_password.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\group_login.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\group_login.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\member_login.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\member_login.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\NotFound.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\NotFound.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\user_login.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\user_login.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\View1.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\View1.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\blank.html" />
+    <Content Include="views\auth\register.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\register.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\blank.html" />
+    <Content Include="views\auth\login.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\auth\login.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\agent_loan.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\agent_loan.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\agent_loan_list.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\agent_loan_list.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\request_claim_form.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\request_claim_form.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\request_claim_list.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\claim\request_claim_list.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\commissions\commissions.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\commissions\commissions.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\css\custom\custom.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\add_member.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\add_member.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\group_home.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\group_home.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\member_management.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\member_management.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\member_statement.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\member_statement.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\quote_group_form.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\quote_group_form.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\quote_group_list.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Group\quote_group_list.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\agent_home.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\agent_home.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\applications.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\applications.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\broker_home.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\broker_home.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\contact_us.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\contact_us.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\FAQ.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\FAQ.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\home.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\home.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\dashboard.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\dashboard.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\Layout.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\Layout.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\MainDashboard.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\MainDashboard.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\main_dashboard.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\main_dashboard.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\user_home.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home\user_home.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\js\helpers\policy_det_data.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\AgentPolicies.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\AgentPolicies.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\endorsement.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\endorsement.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\endorsement_list.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\endorsement_list.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\make_a_payment.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\make_a_payment.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\PaymentsView.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\PaymentsView.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\policy_enquiry.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\policy_enquiry.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\policy_schedule.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\policy_schedule.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\premium_statement.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\premium_statement.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\reports.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\reports.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\view_statement.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\view_statement.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\worksheet.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\policy\worksheet.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\application_form.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\application_form.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\capture_proposal.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\capture_proposal.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\embedded_form.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\embedded_form.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\personal_details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\personal_details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\proposal_form.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\proposal_form.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\products_list.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\proposal\products_list.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\quotation\caputre_quotation.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\quotation\caputre_quotation.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\quotation\get_quotation.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\quotation\get_quotation.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="index.html" />
+    <Content Include="views\css\cldr.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\css\styles.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\js\helpers\access_levels.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\js\helpers\db_helper.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\js\helpers\sync_params.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\quotation\policy_det.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\quotation\policy_det.js">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="css\bootstrap\css" />
+    <Folder Include="css\bootstrap\js" />
+    <Folder Include="css\fonts\" />
+    <Folder Include="css\icons\" />
+    <Folder Include="css\bootstrap" />
+    <Folder Include="css\material" />
+    <Folder Include="css\material\css" />
+    <Folder Include="css\material\fonts" />
+    <Folder Include="css\src" />
+    <Folder Include="css\src\js" />
+    <Folder Include="css\src\js\modules" />
+    <Folder Include="css\static" />
+    <Folder Include="css\static\css" />
+    <Folder Include="css\static\img\avatars" />
+    <Folder Include="css\static\img\icons" />
+    <Folder Include="css\static\img\photos" />
+    <Folder Include="css\static\js" />
+    <Folder Include="css\static\fonts" />
+    <Folder Include="css\static\img" />
+    <Folder Include="data\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
+    <Folder Include="js\cldr\" />
+    <Folder Include="js\globalize\" />
+    <Folder Include="js\localization\" />
+    <Folder Include="views\" />
+    <Folder Include="views\css" />
+    <Folder Include="views\css\custom" />
+    <Folder Include="views\js" />
+    <Folder Include="views\js\helpers" />
+    <Folder Include="views\auth" />
+    <Folder Include="views\home" />
+    <Folder Include="views\claim" />
+    <Folder Include="views\commissions" />
+    <Folder Include="views\Group" />
+    <Folder Include="views\policy" />
+    <Folder Include="views\proposal" />
+    <Folder Include="views\quotation" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Target Name="ResolveReferences">
+    <Message Text="Copying references to output dir..." Importance="high" />
+    <MSBuild Targets="Build" Projects="@(ProjectReference)" Properties="OutputPath=$([System.IO.Path]::GetFullPath('$(OutputPath)'))">
+    </MSBuild>
+  </Target>
+  <Target Name="CopyFilesToOutputDirectory">
+    <Message Text="Copying files to output dir..." Importance="high" />
+    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content-&gt;'$(OutputPath)$([MSBuild]::MakeRelative($(MSBuildProjectDirectory),'%(FullPath)'))')" />
+  </Target>
+  <Target Name="CoreCompile">
+    <!--<Message Text="'$(MSBuildToolsPath)'"></Message>-->
+    <!--<Message Text="'$(BuildingProject)'"></Message>-->
+    <!--<Message Text="Build JSProject '$(MSBuildProjectFile)':" Importance="high"></Message>-->
+    <!--<Message Text="Finished Build JSProject '$(MSBuildProjectFile)'." Importance="high"></Message>-->
+  </Target>
+  <Target Name="CreateManifestResourceNames" Condition="'@(ResxWithNoCulture)@(ResxWithCulture)@(NonResxWithNoCulture)@(NonResxWithCulture)'!=''" />
+  <Target Name="Clean">
+    <!--
+    <Message Text="Cleaning Output files..." Importance="high" />
+    <Delete Files="@([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+    -->
+    <Message Text="Cleaning Output dir ($([System.IO.Path]::GetFullPath('$(OutputPath)')))..." Importance="high" />
+    <RemoveDir Directories="$([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+  </Target>
+</Project>
